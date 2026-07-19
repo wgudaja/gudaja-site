@@ -142,6 +142,7 @@ section:nth-of-type(2n){background:linear-gradient(180deg,#131924 0%,rgba(11,12,
 .mod .mn{font-family:var(--display);color:var(--red);font-weight:600;font-size:14px}
 .mod h4{font-family:var(--display);font-size:16.5px;font-weight:600;margin-bottom:4px;color:var(--text)}
 .mod p{color:#B9C0C9;font-size:14.5px;line-height:1.55}
+.train-format{max-width:72ch;color:#B9C0C9;font-size:15.5px;line-height:1.6;margin-top:44px;position:relative;z-index:2}
 .outhead{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:12px;color:var(--red);margin:56px 0 0;position:relative;z-index:2;font-weight:600}
 .outcomes{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hair);border-left:1px solid var(--hair);margin-top:18px;position:relative;z-index:2}
 .outcome{border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:22px 20px}
@@ -216,7 +217,7 @@ footer{border-top:1px solid var(--hair);padding:28px 0;font-size:12px;color:var(
     <div class="navlinks label">
       <a href="#problem" data-i18n="nav_problem">PROBLEM</a>
       <a href="#approach" data-i18n="nav_approach">APPROACH</a>
-      <a href="#training" data-i18n="nav_training">TRAINING</a>
+      <a href="training.html" data-i18n="nav_training">TRAINING</a>
       <a href="#contact" data-i18n="nav_contact">CONTACT</a>
       <div class="langtog">
         <button data-lang="en" class="active">EN</button>
@@ -406,6 +407,7 @@ footer{border-top:1px solid var(--hair);padding:28px 0;font-size:12px;color:var(
         <div class="mod"><div class="mn">06</div><div><h4 data-i18n="tr_m6h">Case reviews</h4><p data-i18n="tr_m6p"></p></div></div>
       </div>
     </div>
+    <p class="train-format" data-i18n="tr_format">The format is built for senior teams, not lecture halls: a short diagnostic before the session, anonymous input and live discussion during it, worked exercises on real, anonymised cases, and a concise reference the team keeps. The emphasis is on judgement teams can apply the next day, not on theory.</p>
     <div class="outhead" data-i18n="tr_owhat">WHAT IT CHANGES</div>
     <div class="outcomes">
       <div class="outcome"><div class="oi">01</div><p data-i18n="tr_o1"></p></div>
@@ -414,7 +416,7 @@ footer{border-top:1px solid var(--hair);padding:28px 0;font-size:12px;color:var(
       <div class="outcome"><div class="oi">04</div><p data-i18n="tr_o4"></p></div>
     </div>
     <div class="train-cta">
-      <a href="#contact" class="btn" data-i18n="tr_cta">ARRANGE A SESSION</a>
+      <a href="training.html" class="btn" data-i18n="tr_cta">SEE THE FULL PROGRAMME</a>
       <span class="train-close" data-i18n="tr_close"></span>
     </div>
   </div>
@@ -575,11 +577,12 @@ const T={
     tr_m5h:"The legal boundary",tr_m5p:"What commercial teams can and cannot do about parallel trade in the EU, without breaching competition law.",
     tr_m6h:"Case reviews",tr_m6p:"Anonymised real cases, examined step by step with the team.",
     tr_owhat:"WHAT IT CHANGES",
+    tr_format:"The format is built for senior teams, not lecture halls: a short diagnostic before the session, anonymous input and live discussion during it, worked exercises on real, anonymised cases, and a concise reference the team keeps. The emphasis is on judgement teams can apply the next day, not on theory.",
     tr_o1:"Commercial teams that identify at-risk accounts before they affect pricing and margin.",
     tr_o2:"A common standard between sales and brand protection.",
     tr_o3:"Fewer escalations, and earlier commercial intervention.",
     tr_o4:"A consistent basis for assessing new distribution partners.",
-    tr_cta:"ARRANGE A SESSION",
+    tr_cta:"SEE THE FULL PROGRAMME",
     tr_close:"Enforcement responds after the fact. This addresses the commercial conditions that create the exposure in the first place.",
     s4_idx:"WHY GUDAJA",s4_head:"Monitoring shows where product appears. Investigation examines how it got there.",
     s4_body:"Most brand protection watches online listings and takes them down after the fact. We work one step earlier, on how the product left the channel and why. This draws on thirteen years running distribution across CEE, including the parallel-import trade the brands above passed through. It is an understanding of how goods actually move, and where control is lost, that monitoring alone cannot provide.",
@@ -637,11 +640,12 @@ const T={
     tr_m5h:"Granica prawna",tr_m5p:"Co zespoły handlowe mogą, a czego nie, z importem równoległym w UE, bez naruszania prawa konkurencji.",
     tr_m6h:"Analizy przypadków",tr_m6p:"Anonimowe realne sprawy, analizowane krok po kroku z zespołem.",
     tr_owhat:"CO TO ZMIENIA",
+    tr_format:"Format jest pomyślany dla kadry, nie dla sali wykładowej: krótka diagnoza przed sesją, anonimowy wkład i dyskusja na żywo w jej trakcie, ćwiczenia na realnych, zanonimizowanych przypadkach oraz zwięzły materiał, który zostaje w zespole. Nacisk jest na ocenę, którą zespół zastosuje następnego dnia, a nie na teorię.",
     tr_o1:"Zespoły handlowe, które rozpoznają ryzykownych klientów, zanim wpłyną oni na ceny i marżę.",
     tr_o2:"Wspólny standard między sprzedażą a brand protection.",
     tr_o3:"Mniej eskalacji i wcześniejsza interwencja handlowa.",
     tr_o4:"Spójna podstawa oceny nowych partnerów dystrybucyjnych.",
-    tr_cta:"UMÓW SESJĘ",
+    tr_cta:"ZOBACZ PEŁNY PROGRAM",
     tr_close:"Egzekucja reaguje po fakcie. Program adresuje warunki handlowe, które w ogóle tworzą to ryzyko.",
     s4_idx:"DLACZEGO GUDAJA",s4_head:"Monitoring pokazuje, gdzie produkt się pojawia. Analiza bada, jak tam trafił.",
     s4_body:"Większość ochrony marki obserwuje oferty w internecie i usuwa je po fakcie. Pracujemy krok wcześniej: nad tym, jak towar opuścił kanał i dlaczego. To efekt trzynastu lat prowadzenia dystrybucji w CEE, w tym handlu równoległego, przez który przechodziły marki wymienione wyżej. To zrozumienie tego, jak towar naprawdę się przemieszcza i gdzie traci się kontrolę, którego sam monitoring nie zapewnia.",
@@ -699,11 +703,12 @@ const T={
     tr_m5h:"Die rechtliche Grenze",tr_m5p:"Was Handelsteams beim Parallelhandel in der EU dürfen und was nicht, ohne das Wettbewerbsrecht zu verletzen.",
     tr_m6h:"Fallanalysen",tr_m6p:"Anonymisierte reale Fälle, Schritt für Schritt mit dem Team untersucht.",
     tr_owhat:"WAS ES VERÄNDERT",
+    tr_format:"Das Format ist auf erfahrene Teams ausgelegt, nicht auf den Hörsaal: eine kurze Diagnose vor der Sitzung, anonyme Beiträge und Diskussion in Echtzeit währenddessen, Übungen an realen, anonymisierten Fällen und ein prägnanter Leitfaden, der im Team bleibt. Der Fokus liegt auf Urteilsvermögen, das das Team am nächsten Tag anwenden kann, nicht auf Theorie.",
     tr_o1:"Handelsteams, die risikobehaftete Kunden erkennen, bevor sie Preise und Marge beeinflussen.",
     tr_o2:"Ein gemeinsamer Standard zwischen Vertrieb und Brand Protection.",
     tr_o3:"Weniger Eskalationen und frühere kaufmännische Intervention.",
     tr_o4:"Eine konsistente Grundlage zur Bewertung neuer Vertriebspartner.",
-    tr_cta:"SESSION ANFRAGEN",
+    tr_cta:"ZUM VOLLSTÄNDIGEN PROGRAMM",
     tr_close:"Durchsetzung reagiert im Nachhinein. Dieses Programm adressiert die kaufmännischen Bedingungen, die dieses Risiko überhaupt erst schaffen.",
     s4_idx:"WARUM GUDAJA",s4_head:"Monitoring zeigt, wo Ware erscheint. Die Untersuchung prüft, wie sie dorthin kam.",
     s4_body:"Die meiste Brand Protection beobachtet Online-Angebote und entfernt sie im Nachhinein. Wir arbeiten einen Schritt früher: daran, wie die Ware den Kanal verlassen hat und warum. Das kommt aus dreizehn Jahren Vertrieb in CEE, einschließlich des Parallelhandels, durch den die oben genannten Marken liefen. Es ist ein Verständnis davon, wie sich Ware tatsächlich bewegt und wo Kontrolle verloren geht, das Monitoring allein nicht liefern kann.",

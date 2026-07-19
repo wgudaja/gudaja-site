@@ -16,6 +16,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://gudaja.pl/">
+<script defer src="/_vercel/insights/script.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"GUDAJA","description":"Distribution control advisory for brands with selective distribution across Central and Eastern Europe: unauthorised distribution, parallel trade and grey-market exposure.","url":"https://gudaja.pl/","email":"wg@gudaja.pl","telephone":"+48728985426","areaServed":"Central and Eastern Europe","knowsLanguage":["en","pl","de"],"founder":{"@type":"Person","name":"Wojciech Gudaja"},"address":{"@type":"PostalAddress","addressLocality":"Katowice","addressCountry":"PL"},"sameAs":["https://www.linkedin.com/in/wojciechgudaja"]}
+</script>
 <style>
 :root{
   --bg:#0A0B0D; --panel:#101216; --text:#F2F3F5; --muted:#8B929B; --hair:#20242B;
@@ -494,8 +502,10 @@ footer{border-top:1px solid var(--hair);padding:28px 0;font-size:12px;color:var(
         <div class="field"><label data-i18n="form_company">COMPANY</label><input id="f_company"></div>
         <div class="field"><label data-i18n="form_email">EMAIL</label><input id="f_email" type="email" required></div>
         <div class="field"><label data-i18n="form_msg">MESSAGE OR MARKET SIGNAL</label><textarea id="f_msg" required></textarea></div>
+        <input type="checkbox" name="botcheck" id="f_bot" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button class="btn" type="submit" data-i18n="form_send">SEND</button>
-        <p class="formnote" data-i18n="form_note">This opens your email client, pre-addressed to GUDAJA. Correspondence is treated as confidential.</p>
+        <p class="formstatus" id="formstatus" role="status" aria-live="polite" style="display:none"></p>
+        <p class="formnote" data-i18n="form_note">Your message goes straight to GUDAJA. Correspondence is treated as confidential.</p>
       </form>
     </div>
   </div>
@@ -515,16 +525,27 @@ function fillRow(id,arr){
 }
 fillRow('brandrow1',brandsA);fillRow('brandrow2',brandsB);
 
-function sendForm(e){
+const W3F_KEY=""; // paste your free Web3Forms access key here to capture leads in your inbox + dashboard
+function fstatus(el,msg,ok){el.textContent=msg;el.style.cssText='display:block;font-size:13px;margin-top:14px;padding:12px 14px;border:1px solid '+(ok?'var(--red)':'#c9885a')+';color:'+(ok?'var(--text)':'#e0a878');}
+async function sendForm(e){
   e.preventDefault();
-  const n=document.getElementById('f_name').value.trim();
-  const c=document.getElementById('f_company').value.trim();
-  const em=document.getElementById('f_email').value.trim();
-  const m=document.getElementById('f_msg').value.trim();
-  const subject=encodeURIComponent('Enquiry'+(c?(' — '+c):'')+(n?(' / '+n):''));
-  const body=encodeURIComponent('Name: '+n+'\nCompany: '+c+'\nEmail: '+em+'\n\n'+m);
-  window.location.href='mailto:wg@gudaja.pl?subject='+subject+'&body='+body;
-  return false;
+  const g=id=>((document.getElementById(id)||{}).value||'').trim();
+  const n=g('f_name'),c=g('f_company'),em=g('f_email'),m=g('f_msg');
+  if(!W3F_KEY){
+    const subject=encodeURIComponent('Enquiry'+(c?(' / '+c):'')+(n?(' / '+n):''));
+    const body=encodeURIComponent('Name: '+n+'\nCompany: '+c+'\nEmail: '+em+'\n\n'+m);
+    window.location.href='mailto:wg@gudaja.pl?subject='+subject+'&body='+body;return false;
+  }
+  const lang=document.documentElement.lang||'en';const d=T[lang]||T.en;
+  const st=document.getElementById('formstatus');const btn=e.target.querySelector('button[type=submit]');const orig=btn.textContent;
+  btn.disabled=true;btn.textContent='…';
+  try{
+    const bot=document.getElementById('f_bot');
+    const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:W3F_KEY,subject:'gudaja.pl — '+(c||n||'enquiry'),from_name:'gudaja.pl website',name:n,company:c,email:em,message:m,botcheck:bot&&bot.checked})});
+    const j=await r.json();
+    if(j.success){e.target.reset();fstatus(st,d.form_ok,true);}else{fstatus(st,d.form_err,false);}
+  }catch(_){fstatus(st,d.form_err,false);}
+  btn.disabled=false;btn.textContent=orig;return false;
 }
 
 const navEl=document.getElementById('nav');
@@ -592,7 +613,7 @@ const T={
     s6_l1:"SECTORS",s6_v1:"Consumer electronics · Cosmetics & fragrance · Spirits · Pharma & OTC · Automotive aftermarket · Professional tools · Branded apparel & footwear",
     s6_l2:"STAKEHOLDERS",s6_v2:"Brand protection · Trade & channel compliance · Regional commercial / sales operations · Legal",
     s7_idx:"CONTACT",s7_head:"Start a confidential discussion.",s7_body:"If your product is appearing outside its authorised sales network in CEE, describe what you are observing. A single market signal is enough to begin, and all correspondence is treated in confidence.",
-    form_name:"NAME",form_company:"COMPANY",form_email:"EMAIL",form_msg:"MESSAGE OR MARKET SIGNAL",form_send:"SEND",form_note:"This opens your email client, pre-addressed to GUDAJA. Correspondence is treated as confidential.",
+    form_name:"NAME",form_company:"COMPANY",form_email:"EMAIL",form_msg:"MESSAGE OR MARKET SIGNAL",form_send:"SEND",form_note:"Your message goes straight to GUDAJA. Correspondence is treated as confidential.",form_ok:"Thank you. Your message has been sent. We will reply shortly.",form_err:"Something went wrong. Please email wg@gudaja.pl directly.",
     band_cap:"CROSS-BORDER PRODUCT FLOW · AUTHOR'S SCHEMATIC",
     footer:"© 2026 GUDAJA · DISTRIBUTION CONTROL ADVISORY · CENTRAL & EASTERN EUROPE"
   },
@@ -655,7 +676,7 @@ const T={
     s6_l1:"SEKTORY",s6_v1:"Elektronika użytkowa · Kosmetyki i perfumy · Alkohole · Farmacja i OTC · Motoryzacja aftermarket · Narzędzia profesjonalne · Markowa odzież i obuwie",
     s6_l2:"INTERESARIUSZE",s6_v2:"Brand protection · Trade & channel compliance · Commercial / sales operations · Dział prawny",
     s7_idx:"KONTAKT",s7_head:"Rozpocznij poufną rozmowę.",s7_body:"Jeśli Twój towar pojawia się poza autoryzowaną siecią sprzedaży w CEE, opisz, co obserwujesz. Wystarczy jeden sygnał z rynku, żeby zacząć, a wszystko traktujemy poufnie.",
-    form_name:"IMIĘ I NAZWISKO",form_company:"FIRMA",form_email:"EMAIL",form_msg:"WIADOMOŚĆ LUB SYGNAŁ Z RYNKU",form_send:"WYŚLIJ",form_note:"To otworzy Twój program pocztowy z gotowym adresem GUDAJA. Korespondencja traktowana jest poufnie.",
+    form_name:"IMIĘ I NAZWISKO",form_company:"FIRMA",form_email:"EMAIL",form_msg:"WIADOMOŚĆ LUB SYGNAŁ Z RYNKU",form_send:"WYŚLIJ",form_note:"Wiadomość trafia bezpośrednio do GUDAJA. Korespondencja traktowana jest poufnie.",form_ok:"Dziękujemy. Wiadomość została wysłana. Odezwiemy się wkrótce.",form_err:"Coś poszło nie tak. Napisz bezpośrednio na wg@gudaja.pl.",
     band_cap:"PRZEPŁYW TOWARU CROSS-BORDER · SCHEMAT",
     footer:"© 2026 GUDAJA · DORADZTWO KONTROLI DYSTRYBUCJI · EUROPA ŚRODKOWO-WSCHODNIA"
   },
@@ -718,7 +739,7 @@ const T={
     s6_l1:"SEKTOREN",s6_v1:"Unterhaltungselektronik · Kosmetik & Düfte · Spirituosen · Pharma & OTC · Kfz-Aftermarket · Profi-Werkzeuge · Markenbekleidung & Schuhe",
     s6_l2:"ANSPRECHPARTNER",s6_v2:"Brand Protection · Trade & Channel Compliance · Regionales Commercial / Sales Operations · Recht",
     s7_idx:"KONTAKT",s7_head:"Vertrauliches Gespräch beginnen.",s7_body:"Wenn Ihre Ware in CEE außerhalb des autorisierten Vertriebsnetzes auftaucht, beschreiben Sie, was Sie beobachten. Ein einzelnes Marktsignal genügt für den Anfang, und alles wird vertraulich behandelt.",
-    form_name:"NAME",form_company:"UNTERNEHMEN",form_email:"E-MAIL",form_msg:"NACHRICHT ODER MARKTSIGNAL",form_send:"SENDEN",form_note:"Dies öffnet Ihr E-Mail-Programm, voradressiert an GUDAJA. Korrespondenz wird vertraulich behandelt.",
+    form_name:"NAME",form_company:"UNTERNEHMEN",form_email:"E-MAIL",form_msg:"NACHRICHT ODER MARKTSIGNAL",form_send:"SENDEN",form_note:"Ihre Nachricht geht direkt an GUDAJA. Korrespondenz wird vertraulich behandelt.",form_ok:"Danke. Ihre Nachricht wurde gesendet. Wir melden uns in Kürze.",form_err:"Etwas ist schiefgelaufen. Bitte schreiben Sie direkt an wg@gudaja.pl.",
     band_cap:"GRENZÜBERSCHREITENDER WARENFLUSS · SCHEMA",
     footer:"© 2026 GUDAJA · VERTRIEBSKONTROLL-BERATUNG · MITTEL- & OSTEUROPA"
   }

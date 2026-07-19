@@ -16,6 +16,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://gudaja.pl/training.html">
+<script defer src="/_vercel/insights/script.js"></script>
 <style>
 :root{
   --bg:#0A0B0D; --panel:#101216; --text:#F2F3F5; --muted:#8B929B; --hair:#20242B;
@@ -465,8 +470,10 @@ footer{border-top:1px solid var(--hair);padding:28px 0;font-size:12px;color:var(
         <div class="field"><label data-i18n="form_company">COMPANY</label><input id="f_company"></div>
         <div class="field"><label data-i18n="form_email">EMAIL</label><input id="f_email" type="email" required></div>
         <div class="field"><label data-i18n="form_msg">SECTOR, CEE MARKETS AND WHERE YOU SEE LEAKAGE</label><textarea id="f_msg" required></textarea></div>
+        <input type="checkbox" name="botcheck" id="f_bot" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button class="btn" type="submit" data-i18n="form_send">SEND</button>
-        <p class="formnote" data-i18n="form_note">This opens your email client, pre-addressed to GUDAJA. Correspondence is treated as confidential.</p>
+        <p class="formstatus" id="formstatus" role="status" aria-live="polite" style="display:none"></p>
+        <p class="formnote" data-i18n="form_note">Your message goes straight to GUDAJA. Correspondence is treated as confidential.</p>
       </form>
     </div>
   </div>
@@ -477,16 +484,27 @@ footer{border-top:1px solid var(--hair);padding:28px 0;font-size:12px;color:var(
 </footer>
 
 <script>
-function sendForm(e){
+const W3F_KEY=""; // paste your free Web3Forms access key here to capture leads in your inbox + dashboard
+function fstatus(el,msg,ok){el.textContent=msg;el.style.cssText='display:block;font-size:13px;margin-top:14px;padding:12px 14px;border:1px solid '+(ok?'var(--red)':'#c9885a')+';color:'+(ok?'var(--text)':'#e0a878');}
+async function sendForm(e){
   e.preventDefault();
-  const n=document.getElementById('f_name').value.trim();
-  const c=document.getElementById('f_company').value.trim();
-  const em=document.getElementById('f_email').value.trim();
-  const m=document.getElementById('f_msg').value.trim();
-  const subject=encodeURIComponent('Training enquiry'+(c?(' / '+c):'')+(n?(' / '+n):''));
-  const body=encodeURIComponent('Name: '+n+'\nCompany: '+c+'\nEmail: '+em+'\n\n'+m);
-  window.location.href='mailto:wg@gudaja.pl?subject='+subject+'&body='+body;
-  return false;
+  const g=id=>((document.getElementById(id)||{}).value||'').trim();
+  const n=g('f_name'),c=g('f_company'),em=g('f_email'),m=g('f_msg');
+  if(!W3F_KEY){
+    const subject=encodeURIComponent('Training enquiry'+(c?(' / '+c):'')+(n?(' / '+n):''));
+    const body=encodeURIComponent('Name: '+n+'\nCompany: '+c+'\nEmail: '+em+'\n\n'+m);
+    window.location.href='mailto:wg@gudaja.pl?subject='+subject+'&body='+body;return false;
+  }
+  const lang=document.documentElement.lang||'en';const d=T[lang]||T.en;
+  const st=document.getElementById('formstatus');const btn=e.target.querySelector('button[type=submit]');const orig=btn.textContent;
+  btn.disabled=true;btn.textContent='…';
+  try{
+    const bot=document.getElementById('f_bot');
+    const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:W3F_KEY,subject:'gudaja.pl training — '+(c||n||'enquiry'),from_name:'gudaja.pl training',name:n,company:c,email:em,message:m,botcheck:bot&&bot.checked})});
+    const j=await r.json();
+    if(j.success){e.target.reset();fstatus(st,d.form_ok,true);}else{fstatus(st,d.form_err,false);}
+  }catch(_){fstatus(st,d.form_err,false);}
+  btn.disabled=false;btn.textContent=orig;return false;
 }
 const navEl=document.getElementById('nav');
 addEventListener('scroll',()=>{navEl.classList.toggle('shrink',scrollY>40)});
@@ -587,7 +605,7 @@ const T={
     fe_add:"Remote delivery at the lower end of each tier. Travel and accommodation at cost. Optional follow-ons: 30-day reinforcement, a leadership debrief, an annual refresher.",
     co_idx:"CONTACT",co_head:"Request a briefing on your distribution network.",
     co_body:"In a few lines, tell us your sector, your CEE markets, and where you think product is leaking. We will come back with a tailored outline. Treated in confidence.",
-    form_name:"NAME",form_company:"COMPANY",form_email:"EMAIL",form_msg:"SECTOR, CEE MARKETS AND WHERE YOU SEE LEAKAGE",form_send:"SEND",form_note:"This opens your email client, pre-addressed to GUDAJA. Correspondence is treated as confidential.",
+    form_name:"NAME",form_company:"COMPANY",form_email:"EMAIL",form_msg:"SECTOR, CEE MARKETS AND WHERE YOU SEE LEAKAGE",form_send:"SEND",form_note:"Your message goes straight to GUDAJA. Correspondence is treated as confidential.",form_ok:"Thank you. Your message has been sent. We will reply shortly.",form_err:"Something went wrong. Please email wg@gudaja.pl directly.",
     footer:"© 2026 GUDAJA · DISTRIBUTION CONTROL ADVISORY · CENTRAL & EASTERN EUROPE"
   },
   pl:{
@@ -682,7 +700,7 @@ const T={
     fe_add:"Tryb zdalny w dolnej granicy każdego progu. Dojazd i nocleg wg kosztów. Opcjonalne kontynuacje: utrwalenie 30-dniowe, debrief dla kadry, coroczne odświeżenie.",
     co_idx:"KONTAKT",co_head:"Poproś o briefing dotyczący Twojej sieci dystrybucji.",
     co_body:"W kilku zdaniach podaj swój sektor, rynki CEE i gdzie Twoim zdaniem towar wycieka. Odezwiemy się z dopasowanym konspektem. Traktujemy to poufnie.",
-    form_name:"IMIĘ I NAZWISKO",form_company:"FIRMA",form_email:"EMAIL",form_msg:"SEKTOR, RYNKI CEE I GDZIE WIDZISZ WYCIEK",form_send:"WYŚLIJ",form_note:"To otworzy Twój program pocztowy z gotowym adresem GUDAJA. Korespondencja traktowana jest poufnie.",
+    form_name:"IMIĘ I NAZWISKO",form_company:"FIRMA",form_email:"EMAIL",form_msg:"SEKTOR, RYNKI CEE I GDZIE WIDZISZ WYCIEK",form_send:"WYŚLIJ",form_note:"Wiadomość trafia bezpośrednio do GUDAJA. Korespondencja traktowana jest poufnie.",form_ok:"Dziękujemy. Wiadomość została wysłana. Odezwiemy się wkrótce.",form_err:"Coś poszło nie tak. Napisz bezpośrednio na wg@gudaja.pl.",
     footer:"© 2026 GUDAJA · DORADZTWO KONTROLI DYSTRYBUCJI · EUROPA ŚRODKOWO-WSCHODNIA"
   },
   de:{
@@ -777,7 +795,7 @@ const T={
     fe_add:"Remote-Durchführung am unteren Ende jeder Stufe. Anreise und Übernachtung zu Selbstkosten. Optionale Anschlüsse: 30-Tage-Verstärkung, ein Leadership-Debrief, eine jährliche Auffrischung.",
     co_idx:"KONTAKT",co_head:"Fragen Sie ein Briefing zu Ihrem Vertriebsnetz an.",
     co_body:"Schildern Sie in wenigen Zeilen Ihren Sektor, Ihre CEE-Märkte und wo Ihrer Ansicht nach Ware abfließt. Wir melden uns mit einem zugeschnittenen Konzept. Vertraulich behandelt.",
-    form_name:"NAME",form_company:"UNTERNEHMEN",form_email:"E-MAIL",form_msg:"SEKTOR, CEE-MÄRKTE UND WO SIE LECKAGE SEHEN",form_send:"SENDEN",form_note:"Dies öffnet Ihr E-Mail-Programm, voradressiert an GUDAJA. Korrespondenz wird vertraulich behandelt.",
+    form_name:"NAME",form_company:"UNTERNEHMEN",form_email:"E-MAIL",form_msg:"SEKTOR, CEE-MÄRKTE UND WO SIE LECKAGE SEHEN",form_send:"SENDEN",form_note:"Ihre Nachricht geht direkt an GUDAJA. Korrespondenz wird vertraulich behandelt.",form_ok:"Danke. Ihre Nachricht wurde gesendet. Wir melden uns in Kürze.",form_err:"Etwas ist schiefgelaufen. Bitte schreiben Sie direkt an wg@gudaja.pl.",
     footer:"© 2026 GUDAJA · VERTRIEBSKONTROLL-BERATUNG · MITTEL- & OSTEUROPA"
   }
 };

@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GUDAJA — Distribution Control: a working session for commercial teams</title>
+<meta name="description" content="A one-day working session for commercial teams of brands with selective distribution. A six-signal account scorecard, a structured order-level review, and a working map of what EU competition law (Article 101 TFEU, VBER 2022/720) permits. Built from thirteen years inside European branded distribution.">
+<meta name="keywords" content="distribution control training, unauthorised distribution, parallel trade, selective distribution, VBER, Article 101 TFEU, channel integrity, brand protection, order review, account risk scorecard, CEE">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GUDAJA — Distribution Control: a working session for commercial teams">
+<meta property="og:description" content="Frameworks the team keeps: a distributor-risk scorecard, an order-level review, and a working map of what EU competition law permits.">
+<meta property="og:image" content="https://gudaja.pl/hero.jpg">
+<meta property="og:url" content="https://gudaja.pl/training.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0B0D; --panel:#101216; --text:#F2F3F5; --muted:#8B929B; --hair:#20242B;
+  --red:#D4213D; --redh:#E8324A; --white:#FFFFFF;
+  --max:1300px;
+  --display:'Space Grotesk',system-ui,sans-serif;
+  --sans:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(1100px 640px at 50% -8%,#14171F 0%,rgba(20,23,31,0) 60%),var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 6vw}
+a{color:inherit;text-decoration:none}
+.label{font-family:var(--display);font-weight:500;text-transform:uppercase;letter-spacing:.05em}
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-height:1.12}
+.grain{position:fixed;inset:0;z-index:999;pointer-events:none;opacity:.06;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.vignette{position:fixed;inset:0;z-index:998;pointer-events:none;background:radial-gradient(135% 125% at 50% 32%,rgba(0,0,0,0) 52%,rgba(0,0,0,.55) 100%)}
+
+.topbar{border-bottom:1px solid var(--hair);font-size:11px;color:var(--muted)}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;padding:11px 6vw;flex-wrap:wrap;max-width:none}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(10,11,13,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--hair);transition:padding .2s}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px}
+nav.shrink .wrap{padding-top:12px;padding-bottom:12px}
+.brand{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:.06em}
+.navlinks{display:flex;align-items:center;gap:24px;font-size:12px}
+.navlinks a{color:var(--muted);position:relative;padding-bottom:3px}
+.navlinks a:hover{color:var(--text)}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--red);transition:width .18s}
+.navlinks a:hover::after{width:100%}
+.navlinks a.back{color:var(--text)}
+.langtog{display:flex;gap:6px;border:1px solid var(--hair);padding:4px 8px;font-size:11px}
+.langtog button{background:none;border:none;color:var(--muted);cursor:pointer;font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-weight:500}
+.langtog button.active{color:var(--red)}
+@media(max-width:900px){.navlinks{gap:14px}.navlinks .hidesm{display:none}}
+
+section{padding:132px 0;position:relative;border-top:1px solid var(--hair);background:linear-gradient(180deg,#0F131A 0%,rgba(10,11,13,0) 46%)}
+section:nth-of-type(2n){background:linear-gradient(180deg,#131924 0%,rgba(11,12,16,0) 48%)}
+.idx{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--muted);margin-bottom:30px;position:relative;z-index:2;font-family:var(--display);text-transform:uppercase;letter-spacing:.05em}
+.idx b{color:var(--red);font-weight:600}
+.idx .sep{color:var(--hair)}
+.sec-head{font-size:clamp(25px,3.2vw,40px);max-width:24ch;position:relative;z-index:2}
+.sec-sub{max-width:74ch;font-size:16.5px;color:#C6CCD3;margin-top:18px;position:relative;z-index:2}
+
+.hero{padding-top:120px;padding-bottom:110px;position:relative;min-height:80vh;display:flex;align-items:center;background:linear-gradient(90deg,rgba(9,10,12,.93) 0%,rgba(9,10,12,.68) 46%,rgba(9,10,12,.34) 76%,rgba(9,10,12,.18) 100%),url('hero.jpg');background-size:cover;background-position:center}
+.hero .wrap{max-width:none;padding-left:6vw;padding-right:6vw}
+.hero-grid{display:block;max-width:960px}
+.kicker{font-size:12px;color:var(--muted);margin-bottom:26px;display:flex;align-items:center;gap:12px;font-family:var(--display);text-transform:uppercase;letter-spacing:.06em}
+.kicker::before{content:"";width:28px;height:1px;background:var(--red);flex:none}
+.hero h1{font-size:clamp(38px,5.6vw,72px);line-height:1.1;padding-bottom:.08em}
+.hero h1 .ac{color:var(--red);text-shadow:0 0 46px rgba(212,33,61,.22)}
+.hero .sub{max-width:66ch;margin-top:26px;font-size:18px;color:#C6CCD3}
+.meta{display:flex;flex-wrap:wrap;margin-top:34px;border:1px solid var(--hair)}
+.meta div{padding:13px 16px;font-size:11px;color:var(--muted);border-right:1px solid var(--hair);flex:1;min-width:140px;font-family:var(--display);text-transform:uppercase;letter-spacing:.04em}
+.meta div:last-child{border-right:none}
+.meta b{color:var(--text);font-weight:500;display:block;margin-top:5px;font-size:12px}
+.cta{display:flex;gap:20px;align-items:center;margin-top:36px;flex-wrap:wrap}
+.btn{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-weight:500;font-size:13px;padding:16px 30px;background:var(--red);color:var(--white);border:none;cursor:pointer;display:inline-block;transition:background .15s}
+.btn:hover{background:var(--redh)}
+.btn2{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-weight:500;font-size:13px;color:var(--muted);border-bottom:1px solid transparent;padding-bottom:3px}
+.btn2:hover{color:var(--text);border-color:var(--red)}
+
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start;position:relative;z-index:2}
+.twocol h2{font-size:clamp(25px,3vw,38px)}
+.lead{color:#C2C9D1;font-size:17px}
+.legal-foot{font-size:12px;color:var(--muted);margin-top:24px;border-top:1px solid var(--hair);padding-top:16px;display:inline-block;font-family:var(--display);text-transform:uppercase;letter-spacing:.04em}
+
+.who-lists{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:38px;position:relative;z-index:2}
+.who-lists .lbl{font-size:12px;color:var(--red);margin-bottom:16px;font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.who-lists .val{font-size:14px;color:#C2C9D1;line-height:2.05;font-family:var(--display);letter-spacing:.02em}
+
+.signals{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--hair);border-left:1px solid var(--hair);margin-top:34px;position:relative;z-index:2}
+.signals.g2{grid-template-columns:1fr 1fr}
+.sig{border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:26px 24px}
+.sig .sn{font-family:var(--display);color:var(--red);font-weight:600;font-size:13px;margin-bottom:12px}
+.sig h4{font-family:var(--display);font-size:16.5px;font-weight:600;margin-bottom:7px;color:var(--text)}
+.sig p{color:#B9C0C9;font-size:14.5px;line-height:1.55}
+@media(max-width:820px){.signals,.signals.g2{grid-template-columns:1fr}}
+
+.fig-frame{border:1px solid var(--hair);background:var(--panel);margin-top:32px;position:relative;z-index:2}
+.fig-frame .fh{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:11px;color:var(--muted);padding:16px 22px;border-bottom:1px solid var(--hair)}
+.fig-frame .fh b{color:var(--red);font-weight:600}
+.dtable{width:100%;border-collapse:collapse}
+.dtable th{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:10.5px;color:var(--muted);text-align:left;padding:13px 22px;border-bottom:1px solid var(--hair);font-weight:500}
+.dtable td{padding:15px 22px;font-size:14.5px;border-top:1px solid var(--hair);vertical-align:top;color:#C2C9D1}
+.dtable tbody tr:first-child td{border-top:none}
+.dtable .s{font-family:var(--display);color:var(--text);font-weight:600;font-size:14.5px}
+.dtable .reads{color:var(--red);font-family:var(--display);font-size:11.5px;text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
+@media(max-width:700px){.dtable th,.dtable td{padding:11px 14px;font-size:13.5px}.dtable .reads{font-size:10.5px}}
+
+.cols2{display:grid;grid-template-columns:1fr 1fr;margin-top:32px;border:1px solid var(--hair);position:relative;z-index:2}
+.cols2 .col{padding:28px 26px}
+.cols2 .col+.col{border-left:1px solid var(--hair)}
+.cols2 .ch{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:12px;font-weight:600;margin-bottom:16px}
+.cols2 .ch.ok{color:var(--text)}
+.cols2 .ch.no{color:var(--red)}
+.cols2 ul{list-style:none}
+.cols2 li{padding:13px 0 13px 20px;border-top:1px solid var(--hair);font-size:14.5px;color:#C2C9D1;position:relative;line-height:1.5}
+.cols2 li:first-child{border-top:none}
+.cols2 li::before{content:"";position:absolute;left:0;top:21px;width:8px;height:1px;background:var(--muted)}
+.cols2 .no li::before{background:var(--red)}
+@media(max-width:820px){.cols2{grid-template-columns:1fr}.cols2 .col+.col{border-left:none;border-top:1px solid var(--hair)}}
+
+.decline{margin-top:22px;font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-size:13px;color:var(--muted);position:relative;z-index:2}
+.decline b{color:var(--red);font-weight:600}
+
+.steps{margin-top:34px;position:relative;z-index:2}
+.step{display:grid;grid-template-columns:46px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--hair)}
+.step:last-child{border-bottom:1px solid var(--hair)}
+.step .sn{font-family:var(--display);color:var(--red);font-weight:600;font-size:14px}
+.step p{color:#C6CCD3;font-size:15.5px;line-height:1.5}
+
+.agwrap{margin-top:30px;position:relative;z-index:2;border:1px solid var(--hair);background:var(--panel)}
+.agenda{width:100%;border-collapse:collapse}
+.agenda th{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:10.5px;color:var(--muted);text-align:left;padding:14px 22px;border-bottom:1px solid var(--hair);font-weight:500}
+.agenda th.mn{text-align:right}
+.agenda td{padding:12px 22px;font-size:14.5px;border-top:1px solid var(--hair)}
+.agenda tbody tr:first-child td{border-top:none}
+.agenda .t{font-family:var(--display);color:var(--muted);white-space:nowrap;width:78px;font-size:13px;font-variant-numeric:tabular-nums}
+.agenda .s{color:var(--text)}
+.agenda .m{color:var(--muted);text-align:right;font-family:var(--display);font-size:12px;white-space:nowrap;width:60px}
+.agenda tr.brk .s{color:var(--muted)}
+.agenda tr.mod-row .s::before{content:"";display:inline-block;width:6px;height:6px;background:var(--red);margin-right:11px;vertical-align:middle}
+.agnote{font-size:13px;color:var(--muted);margin-top:18px;position:relative;z-index:2}
+@media(max-width:600px){.agenda td,.agenda th{padding:10px 14px}.agenda .m,.agenda th.mn{display:none}}
+
+.row{display:grid;grid-template-columns:190px 1fr;gap:26px;padding:30px 0;border-top:1px solid var(--hair);align-items:baseline;position:relative;z-index:2;transition:padding-left .2s}
+.row:hover{padding-left:10px}
+.row:last-of-type{border-bottom:1px solid var(--hair)}
+.row .rtag{font-family:var(--display);color:var(--red);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.row h3{font-family:var(--display);font-size:19px;font-weight:600;margin-bottom:8px}
+.row p{color:#C2C9D1;font-size:15px}
+@media(max-width:820px){.row{grid-template-columns:1fr;gap:8px}.row:hover{padding-left:0}}
+.tkcert{margin-top:26px;font-size:14px;color:var(--muted);position:relative;z-index:2}
+.tkcert b{color:var(--text);font-weight:500}
+
+.fees{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--hair);border-left:1px solid var(--hair);margin-top:34px;position:relative;z-index:2}
+.fee{border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:34px 28px;position:relative;display:flex;flex-direction:column}
+.fee.feat{box-shadow:inset 0 2px 0 var(--red)}
+.fee .tier{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:12px;color:var(--red);font-weight:600}
+.fee .scope{color:#B9C0C9;font-size:14px;margin-top:14px;min-height:66px;line-height:1.5}
+.fee .grp{font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-size:11px;color:var(--muted);margin-top:8px}
+.fee .amt{font-family:var(--display);font-weight:700;font-size:32px;letter-spacing:-.02em;margin-top:22px;color:var(--text)}
+.fee.feat .amt{color:var(--red)}
+.feeadd{font-size:13px;color:var(--muted);margin-top:22px;position:relative;z-index:2;max-width:82ch;line-height:1.6}
+@media(max-width:820px){.fees{grid-template-columns:1fr}}
+
+.contact h2{font-size:clamp(30px,4.4vw,58px);max-width:20ch}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:36px;position:relative;z-index:2}
+.crows{margin-top:24px;border-top:1px solid var(--hair)}
+.crows a{display:flex;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--hair);font-size:13px;color:var(--muted);font-family:var(--display);text-transform:uppercase;letter-spacing:.04em}
+.crows a .v{color:var(--text)}
+.crows a:hover .v{color:var(--red)}
+.field{margin-bottom:16px}
+.field label{display:block;font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-size:10.5px;color:var(--muted);margin-bottom:7px}
+.field input,.field textarea{width:100%;background:transparent;border:1px solid var(--hair);color:var(--text);padding:12px 14px;font-family:var(--sans);font-size:15px}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--red)}
+.field textarea{min-height:118px;resize:vertical}
+.formnote{font-size:11px;color:#6b7280;margin-top:14px}
+@media(max-width:820px){.contact-grid{grid-template-columns:1fr;gap:34px}}
+
+footer{border-top:1px solid var(--hair);padding:28px 0;font-size:12px;color:var(--muted);font-family:var(--display);text-transform:uppercase;letter-spacing:.05em}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .26s ease,transform .26s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:900px){.twocol{grid-template-columns:1fr;gap:26px}section{padding:82px 0}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<div class="topbar">
+  <div class="wrap label">
+    <span data-i18n="tb_left">GUDAJA · DISTRIBUTION CONTROL ADVISORY</span>
+    <span data-i18n="tb_right">COMMERCIAL TRAINING</span>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">GUDAJA<span style="color:var(--red)">.</span></a>
+    <div class="navlinks label">
+      <a class="back" href="index.html" data-i18n="nav_back">DISTRIBUTION CONTROL</a>
+      <a href="#frameworks" class="hidesm" data-i18n="nav_frame">FRAMEWORKS</a>
+      <a href="#agenda" class="hidesm" data-i18n="nav_agenda">THE DAY</a>
+      <a href="#fees" data-i18n="nav_fees">FEES</a>
+      <a href="#contact" data-i18n="nav_contact">ENQUIRE</a>
+      <div class="langtog">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="pl">PL</button>
+        <button data-lang="de">DE</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="kicker" data-i18n="hero_kicker">ONE-DAY WORKING SESSION · SALES & COMMERCIAL TEAMS · CEE</div>
+    <h1 id="hero_h1">Distribution control for <span class="ac">commercial teams.</span></h1>
+    <p class="sub" data-i18n="hero_sub"></p>
+    <div class="meta">
+      <div><span data-i18n="he_f1l">FORMAT</span><b data-i18n="he_f1v">One day, on-site or remote</b></div>
+      <div><span data-i18n="he_f2l">GROUP</span><b data-i18n="he_f2v">Up to 15</b></div>
+      <div><span data-i18n="he_f3l">LANGUAGES</span><b data-i18n="he_f3v">EN · PL · DE</b></div>
+      <div><span data-i18n="he_f4l">LEVEL</span><b data-i18n="he_f4v">Senior commercial</b></div>
+    </div>
+    <div class="cta">
+      <a href="#contact" class="btn" data-i18n="hero_cta1">REQUEST A BRIEFING</a>
+      <a href="#frameworks" class="btn2" data-i18n="hero_cta2">SEE THE FRAMEWORKS</a>
+    </div>
+  </div>
+</header>
+
+<section id="premise">
+  <div class="wrap">
+    <div class="idx"><b>01</b><span class="sep">/</span><span data-i18n="pr_idx">WHAT IT ADDRESSES</span></div>
+    <div class="twocol">
+      <h2 data-i18n="pr_head">Product leaves the authorised network through the commercial relationship, not through logistics.</h2>
+      <div>
+        <p class="lead" data-i18n="pr_body"></p>
+        <span class="legal-foot" data-i18n="pr_foot">COMMERCIAL AND OPERATIONAL TRAINING, NOT LEGAL ADVICE.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="who">
+  <div class="wrap">
+    <div class="idx"><b>02</b><span class="sep">/</span><span data-i18n="wh_idx">WHO IT IS FOR</span></div>
+    <h2 class="sec-head" data-i18n="wh_head">Written for the people who own the distributor relationships and approve the orders.</h2>
+    <div class="who-lists">
+      <div><div class="lbl" data-i18n="wh_l1">ROLES</div><div class="val" data-i18n="wh_v1"></div></div>
+      <div><div class="lbl" data-i18n="wh_l2">SECTORS</div><div class="val" data-i18n="wh_v2"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="outcomes">
+  <div class="wrap">
+    <div class="idx"><b>03</b><span class="sep">/</span><span data-i18n="oc_idx">WHAT THEY LEAVE ABLE TO DO</span></div>
+    <h2 class="sec-head" data-i18n="oc_head">Six concrete capabilities, applied the next working week.</h2>
+    <div class="signals">
+      <div class="sig"><div class="sn">01</div><p data-i18n="oc1"></p></div>
+      <div class="sig"><div class="sn">02</div><p data-i18n="oc2"></p></div>
+      <div class="sig"><div class="sn">03</div><p data-i18n="oc3"></p></div>
+      <div class="sig"><div class="sn">04</div><p data-i18n="oc4"></p></div>
+      <div class="sig"><div class="sn">05</div><p data-i18n="oc5"></p></div>
+      <div class="sig"><div class="sn">06</div><p data-i18n="oc6"></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="frameworks">
+  <div class="wrap">
+    <div class="idx"><b>04</b><span class="sep">/</span><span data-i18n="fc_idx">WHERE CONTROL IS LOST</span></div>
+    <h2 class="sec-head" data-i18n="fc_head">Four conditions precede almost every case.</h2>
+    <p class="sec-sub" data-i18n="fc_sub"></p>
+    <div class="fig-frame">
+      <div class="fh"><b>FIG. 01</b> <span data-i18n="fc_fig">THE FOUR CONDITIONS</span></div>
+      <div class="signals g2" style="margin-top:0;border-top:none;border-left:none">
+        <div class="sig"><div class="sn">01</div><h4 data-i18n="fc_1h">Insufficient support</h4><p data-i18n="fc_1p"></p></div>
+        <div class="sig"><div class="sn">02</div><h4 data-i18n="fc_2h">Misaligned incentives</h4><p data-i18n="fc_2p"></p></div>
+        <div class="sig"><div class="sn">03</div><h4 data-i18n="fc_3h">Targets over discipline</h4><p data-i18n="fc_3p"></p></div>
+        <div class="sig"><div class="sn">04</div><h4 data-i18n="fc_4h">Gaps in coverage</h4><p data-i18n="fc_4p"></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="scorecard">
+  <div class="wrap">
+    <div class="idx"><b>05</b><span class="sep">/</span><span data-i18n="sc_idx">READING THE ACCOUNT</span></div>
+    <h2 class="sec-head" data-i18n="sc_head">Six signals, scored before the order.</h2>
+    <p class="sec-sub" data-i18n="sc_sub"></p>
+    <div class="fig-frame">
+      <div class="fh"><b>FIG. 02</b> <span data-i18n="sc_fig">ACCOUNT RISK SCORECARD</span></div>
+      <table class="dtable">
+        <thead><tr><th data-i18n="sc_h1">SIGNAL</th><th data-i18n="sc_h2">WHAT TO LOOK AT</th><th data-i18n="sc_h3">READS AS</th></tr></thead>
+        <tbody>
+          <tr><td class="s" data-i18n="sc_1s">Price divergence</td><td data-i18n="sc_1l"></td><td class="reads" data-i18n="sc_1r"></td></tr>
+          <tr><td class="s" data-i18n="sc_2s">Unexpected availability</td><td data-i18n="sc_2l"></td><td class="reads" data-i18n="sc_2r"></td></tr>
+          <tr><td class="s" data-i18n="sc_3s">Distributor conflict</td><td data-i18n="sc_3l"></td><td class="reads" data-i18n="sc_3r"></td></tr>
+          <tr><td class="s" data-i18n="sc_4s">Repeated marketplace presence</td><td data-i18n="sc_4l"></td><td class="reads" data-i18n="sc_4r"></td></tr>
+          <tr><td class="s" data-i18n="sc_5s">Unexplained stock patterns</td><td data-i18n="sc_5l"></td><td class="reads" data-i18n="sc_5r"></td></tr>
+          <tr><td class="s" data-i18n="sc_6s">Information gaps</td><td data-i18n="sc_6l"></td><td class="reads" data-i18n="sc_6r"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="agnote" data-i18n="sc_note">The take-home version is a one-page rating sheet: each signal scored and weighted into a single account risk number.</p>
+  </div>
+</section>
+
+<section id="order">
+  <div class="wrap">
+    <div class="idx"><b>06</b><span class="sep">/</span><span data-i18n="ol_idx">THE ORDER-LEVEL REVIEW</span></div>
+    <h2 class="sec-head" data-i18n="ol_head">Five checks, one decision.</h2>
+    <p class="sec-sub" data-i18n="ol_sub"></p>
+    <div class="signals">
+      <div class="sig"><div class="sn">01</div><h4 data-i18n="ol_1h">Order mix vs history</h4><p data-i18n="ol_1p"></p></div>
+      <div class="sig"><div class="sn">02</div><h4 data-i18n="ol_2h">Terms & payment</h4><p data-i18n="ol_2p"></p></div>
+      <div class="sig"><div class="sn">03</div><h4 data-i18n="ol_3h">Destination & incoterms</h4><p data-i18n="ol_3p"></p></div>
+      <div class="sig"><div class="sn">04</div><h4 data-i18n="ol_4h">Timing</h4><p data-i18n="ol_4p"></p></div>
+      <div class="sig"><div class="sn">05</div><h4 data-i18n="ol_5h">Margin arithmetic</h4><p data-i18n="ol_5p"></p></div>
+    </div>
+    <p class="decline" data-i18n="ol_dec">The review resolves to one of four calls: <b>proceed · question · escalate · decline.</b></p>
+  </div>
+</section>
+
+<section id="legal">
+  <div class="wrap">
+    <div class="idx"><b>07</b><span class="sep">/</span><span data-i18n="lb_idx">THE LEGAL BOUNDARY</span></div>
+    <h2 class="sec-head" data-i18n="lb_head">What commercial teams can do, and the lines they cannot cross.</h2>
+    <p class="sec-sub" data-i18n="lb_sub"></p>
+    <div class="cols2">
+      <div class="col">
+        <div class="ch ok" data-i18n="lb_okh">LAWFUL & DEFENSIBLE</div>
+        <ul>
+          <li data-i18n="lb_ok1"></li>
+          <li data-i18n="lb_ok2"></li>
+          <li data-i18n="lb_ok3"></li>
+          <li data-i18n="lb_ok4"></li>
+          <li data-i18n="lb_ok5"></li>
+        </ul>
+      </div>
+      <div class="col no">
+        <div class="ch no" data-i18n="lb_noh">OFF LIMITS · HARDCORE RESTRICTIONS</div>
+        <ul>
+          <li data-i18n="lb_no1"></li>
+          <li data-i18n="lb_no2"></li>
+          <li data-i18n="lb_no3"></li>
+          <li data-i18n="lb_no4"></li>
+          <li data-i18n="lb_no5"></li>
+        </ul>
+      </div>
+    </div>
+    <span class="legal-foot" data-i18n="lb_note">FRAMEWORK: ARTICLE 101 TFEU AND COMMISSION REGULATION (EU) 2022/720 (VBER). GUIDANCE, NOT LEGAL ADVICE; MEASURES CONFIRMED WITH THE CLIENT'S COMPETITION COUNSEL.</span>
+  </div>
+</section>
+
+<section id="agenda">
+  <div class="wrap">
+    <div class="idx"><b>08</b><span class="sep">/</span><span data-i18n="ag_idx">HOW THE DAY RUNS</span></div>
+    <h2 class="sec-head" data-i18n="ag_head">One day, structured, applied throughout.</h2>
+    <div class="signals g2" style="margin-top:30px">
+      <div class="sig"><h4 data-i18n="me_1h">Diagnostic first</h4><p data-i18n="me_1p"></p></div>
+      <div class="sig"><h4 data-i18n="me_2h">Anonymous live input</h4><p data-i18n="me_2p"></p></div>
+      <div class="sig"><h4 data-i18n="me_3h">Applied every module</h4><p data-i18n="me_3p"></p></div>
+      <div class="sig"><h4 data-i18n="me_4h">Tools that leave</h4><p data-i18n="me_4p"></p></div>
+    </div>
+    <div class="agwrap">
+      <table class="agenda">
+        <thead><tr><th data-i18n="ag_ht">TIME</th><th data-i18n="ag_hs">SESSION</th><th class="mn" data-i18n="ag_hm">MIN</th></tr></thead>
+        <tbody>
+          <tr class="brk"><td class="t">08:45</td><td class="s" data-i18n="ag_arrival">Arrival, coffee</td><td class="m">—</td></tr>
+          <tr><td class="t">09:00</td><td class="s" data-i18n="ag_open">Opening: the pre-work reveal and the day's premise</td><td class="m">30</td></tr>
+          <tr class="mod-row"><td class="t">09:30</td><td class="s" data-i18n="ag_m1">Where control is lost: the four conditions</td><td class="m">60</td></tr>
+          <tr class="brk"><td class="t">10:30</td><td class="s" data-i18n="ag_break">Break</td><td class="m">15</td></tr>
+          <tr class="mod-row"><td class="t">10:45</td><td class="s" data-i18n="ag_m2">How product moves outside the network in CEE</td><td class="m">45</td></tr>
+          <tr class="mod-row"><td class="t">11:30</td><td class="s" data-i18n="ag_m3">Reading the account: the six-signal scorecard</td><td class="m">60</td></tr>
+          <tr class="brk"><td class="t">12:30</td><td class="s" data-i18n="ag_lunch">Lunch</td><td class="m">45</td></tr>
+          <tr class="mod-row"><td class="t">13:15</td><td class="s" data-i18n="ag_m4">The order-level review</td><td class="m">60</td></tr>
+          <tr class="mod-row"><td class="t">14:15</td><td class="s" data-i18n="ag_m5">The legal boundary</td><td class="m">45</td></tr>
+          <tr class="brk"><td class="t">15:00</td><td class="s" data-i18n="ag_break2">Break</td><td class="m">15</td></tr>
+          <tr class="mod-row"><td class="t">15:15</td><td class="s" data-i18n="ag_clinic">The applied case: worked end to end</td><td class="m">60</td></tr>
+          <tr class="mod-row"><td class="t">16:15</td><td class="s" data-i18n="ag_m6">From findings to weekly practice, and close</td><td class="m">30</td></tr>
+          <tr class="brk"><td class="t">16:45</td><td class="s" data-i18n="ag_finish">Finish</td><td class="m">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="agnote" data-i18n="ag_note">Half-day variant: opening, the four conditions, the scorecard and the order-level review, about four hours.</p>
+  </div>
+</section>
+
+<section id="case">
+  <div class="wrap">
+    <div class="idx"><b>09</b><span class="sep">/</span><span data-i18n="ac_idx">THE APPLIED CASE</span></div>
+    <h2 class="sec-head" data-i18n="ac_head">One realistic case, worked end to end.</h2>
+    <p class="sec-sub" data-i18n="ac_sub"></p>
+    <div class="steps">
+      <div class="step"><div class="sn">01</div><p data-i18n="ac_1"></p></div>
+      <div class="step"><div class="sn">02</div><p data-i18n="ac_2"></p></div>
+      <div class="step"><div class="sn">03</div><p data-i18n="ac_3"></p></div>
+      <div class="step"><div class="sn">04</div><p data-i18n="ac_4"></p></div>
+    </div>
+    <p class="agnote" data-i18n="ac_note">Built from real CEE patterns, fully anonymised. Teams work it in groups against the day's tools, then debrief against how the situation actually resolved.</p>
+  </div>
+</section>
+
+<section id="toolkit">
+  <div class="wrap">
+    <div class="idx"><b>10</b><span class="sep">/</span><span data-i18n="tk_idx">WHAT THE TEAM KEEPS</span></div>
+    <h2 class="sec-head" data-i18n="tk_head">Three instruments, built for the next working day.</h2>
+    <div style="margin-top:16px">
+      <div class="row"><div class="rtag" data-i18n="tk_1t">TOOL 01</div><div><h3 data-i18n="tk_1h">Account Risk Scorecard</h3><p data-i18n="tk_1p"></p></div></div>
+      <div class="row"><div class="rtag" data-i18n="tk_2t">TOOL 02</div><div><h3 data-i18n="tk_2h">Order-Level Review Checklist</h3><p data-i18n="tk_2p"></p></div></div>
+      <div class="row"><div class="rtag" data-i18n="tk_3t">TOOL 03</div><div><h3 data-i18n="tk_3h">Legal Boundary Map</h3><p data-i18n="tk_3p"></p></div></div>
+    </div>
+    <p class="tkcert" data-i18n="tk_cert"></p>
+  </div>
+</section>
+
+<section id="fees">
+  <div class="wrap">
+    <div class="idx"><b>11</b><span class="sep">/</span><span data-i18n="fe_idx">FEES</span></div>
+    <h2 class="sec-head" data-i18n="fe_head">Priced by the tailoring, not by headcount.</h2>
+    <div class="fees">
+      <div class="fee">
+        <div class="tier" data-i18n="fe_1t">HALF-DAY</div>
+        <div class="scope" data-i18n="fe_1s">Opening, four conditions, scorecard, order-level review</div>
+        <div class="grp" data-i18n="fe_1g">up to 12</div>
+        <div class="amt" data-i18n="fe_1a">EUR 3,500</div>
+      </div>
+      <div class="fee">
+        <div class="tier" data-i18n="fe_2t">FULL DAY</div>
+        <div class="scope" data-i18n="fe_2s">Full programme, all frameworks, the applied case</div>
+        <div class="grp" data-i18n="fe_2g">up to 15</div>
+        <div class="amt" data-i18n="fe_2a">EUR 6,000</div>
+      </div>
+      <div class="fee feat">
+        <div class="tier" data-i18n="fe_3t">FULLY TAILORED</div>
+        <div class="scope" data-i18n="fe_3s">Full day built on your categories, your markets and your own anonymised cases</div>
+        <div class="grp" data-i18n="fe_3g">up to 15</div>
+        <div class="amt" data-i18n="fe_3a">EUR 7,500</div>
+      </div>
+    </div>
+    <p class="feeadd" data-i18n="fe_add">Remote delivery at the lower end of each tier. Travel and accommodation at cost. Optional follow-ons: 30-day reinforcement, a leadership debrief, an annual refresher.</p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="idx"><b>12</b><span class="sep">/</span><span data-i18n="co_idx">CONTACT</span></div>
+    <h2 data-i18n="co_head">Request a briefing on your distribution network.</h2>
+    <div class="contact-grid">
+      <div>
+        <p class="lead" style="max-width:46ch" data-i18n="co_body"></p>
+        <div class="crows">
+          <a href="https://www.linkedin.com/in/wojciechgudaja" target="_blank"><span>LINKEDIN</span><span class="v">IN/WOJCIECHGUDAJA</span></a>
+          <a href="mailto:wg@gudaja.pl"><span>EMAIL</span><span class="v">WG@GUDAJA.PL</span></a>
+          <a href="tel:+48728985426"><span>PHONE</span><span class="v">+48 728 985 426</span></a>
+        </div>
+      </div>
+      <form onsubmit="return sendForm(event)">
+        <div class="field"><label data-i18n="form_name">NAME</label><input id="f_name" required></div>
+        <div class="field"><label data-i18n="form_company">COMPANY</label><input id="f_company"></div>
+        <div class="field"><label data-i18n="form_email">EMAIL</label><input id="f_email" type="email" required></div>
+        <div class="field"><label data-i18n="form_msg">SECTOR, CEE MARKETS AND WHERE YOU SEE LEAKAGE</label><textarea id="f_msg" required></textarea></div>
+        <button class="btn" type="submit" data-i18n="form_send">SEND</button>
+        <p class="formnote" data-i18n="form_note">This opens your email client, pre-addressed to GUDAJA. Correspondence is treated as confidential.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" data-i18n="footer">© 2026 GUDAJA · DISTRIBUTION CONTROL ADVISORY · CENTRAL & EASTERN EUROPE</div>
+</footer>
+
+<script>
+function sendForm(e){
+  e.preventDefault();
+  const n=document.getElementById('f_name').value.trim();
+  const c=document.getElementById('f_company').value.trim();
+  const em=document.getElementById('f_email').value.trim();
+  const m=document.getElementById('f_msg').value.trim();
+  const subject=encodeURIComponent('Training enquiry'+(c?(' / '+c):'')+(n?(' / '+n):''));
+  const body=encodeURIComponent('Name: '+n+'\nCompany: '+c+'\nEmail: '+em+'\n\n'+m);
+  window.location.href='mailto:wg@gudaja.pl?subject='+subject+'&body='+body;
+  return false;
+}
+const navEl=document.getElementById('nav');
+addEventListener('scroll',()=>{navEl.classList.toggle('shrink',scrollY>40)});
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.twocol,.who-lists,.signals,.fig-frame,.cols2,.steps,.agwrap,.row,.fees,.contact-grid,.hero .meta,.hero .cta').forEach(el=>{el.classList.add('reveal');io.observe(el)});
+
+const HTMLKEYS=['hero_h1'];
+const T={
+  en:{
+    tb_left:"GUDAJA · DISTRIBUTION CONTROL ADVISORY",tb_right:"COMMERCIAL TRAINING",
+    nav_back:"DISTRIBUTION CONTROL",nav_frame:"FRAMEWORKS",nav_agenda:"THE DAY",nav_fees:"FEES",nav_contact:"ENQUIRE",
+    hero_kicker:"ONE-DAY WORKING SESSION · SALES & COMMERCIAL TEAMS · CEE",
+    hero_h1:'Distribution control for <span class="ac">commercial teams.</span>',
+    hero_sub:"A one-day working session for the commercial function of brands with selective distribution. It gives sales, key-account and brand-protection teams three things they keep: a scorecard for reading distributor risk, an order-level review that ends in a decision, and a working map of what EU competition law lets them do. Built from thirteen years operating inside European branded distribution.",
+    he_f1l:"FORMAT",he_f1v:"One day, on-site or remote",he_f2l:"GROUP",he_f2v:"Up to 15",he_f3l:"LANGUAGES",he_f3v:"EN · PL · DE",he_f4l:"LEVEL",he_f4v:"Senior commercial",
+    hero_cta1:"REQUEST A BRIEFING",hero_cta2:"SEE THE FRAMEWORKS",
+    pr_idx:"WHAT IT ADDRESSES",pr_head:"Product leaves the authorised network through the commercial relationship, not through logistics.",
+    pr_body:"When a distributor is under-supported, driven on volume, or misaligned on incentives, part of its stock reaches markets it was never meant for. By the time it shows up as a price on a marketplace, the commercial decision behind it is months old. This session works one step upstream: it trains commercial teams to read the relationship and the order for that risk, and to act on it within the law, before margin is lost.",
+    pr_foot:"COMMERCIAL AND OPERATIONAL TRAINING, NOT LEGAL ADVICE.",
+    wh_idx:"WHO IT IS FOR",wh_head:"Written for the people who own the distributor relationships and approve the orders.",
+    wh_l1:"ROLES",wh_v1:"Regional & country sales directors · Key account managers · Commercial operations · Trade & channel compliance · Brand protection",
+    wh_l2:"SECTORS",wh_v2:"Consumer electronics · Cosmetics & fragrance · Spirits · Pharma & OTC · Automotive aftermarket · Professional tools · Branded apparel & footwear",
+    oc_idx:"WHAT THEY LEAVE ABLE TO DO",oc_head:"Six concrete capabilities, applied the next working week.",
+    oc1:"Name the four commercial conditions that precede unauthorised distribution, and score which are present in their own network.",
+    oc2:"Rate any distributor for risk on a six-signal scorecard, before an order is placed.",
+    oc3:"Run a structured order-level review that ends in one of four calls: proceed, question, escalate, decline.",
+    oc4:"Tell lawful parallel trade apart from actionable movement under EU rules, and steer clear of the hardcore competition-law restrictions.",
+    oc5:"Use the commercial levers that are both effective and defensible.",
+    oc6:"Apply the scorecard and checklist to their own accounts from the following week.",
+    fc_idx:"WHERE CONTROL IS LOST",fc_head:"Four conditions precede almost every case.",
+    fc_sub:"Unauthorised distribution is a lagging symptom. It becomes visible as a price on a marketplace; it originates months earlier, in one or more of these four conditions in the distributor relationship.",
+    fc_fig:"THE FOUR CONDITIONS",
+    fc_1h:"Insufficient support",fc_1p:"Margin, terms or attention below what the distributor needs to hit its numbers inside the network.",
+    fc_2h:"Misaligned incentives",fc_2p:"The distributor is rewarded for volume it cannot place through authorised demand.",
+    fc_3h:"Targets over discipline",fc_3p:"Bonus and quota structures that make an out-of-network order the rational choice.",
+    fc_4h:"Gaps in coverage",fc_4p:"Territories, SKUs or price tiers where no one owns the relationship, and product drifts.",
+    sc_idx:"READING THE ACCOUNT",sc_head:"Six signals, scored before the order.",
+    sc_sub:"Each signal is rated and weighted into a single account risk score. The point is a repeatable judgement, reached the same way by sales and by brand protection, rather than a gut call.",
+    sc_fig:"ACCOUNT RISK SCORECARD",sc_h1:"SIGNAL",sc_h2:"WHAT TO LOOK AT",sc_h3:"READS AS",
+    sc_1s:"Price divergence",sc_1l:"The same SKU at a materially different price across markets.",sc_1r:"Arbitrage headroom",
+    sc_2s:"Unexpected availability",sc_2l:"Product in a market or channel with no authorised route.",sc_2r:"Leakage already live",
+    sc_3s:"Distributor conflict",sc_3l:"Authorised partners flag unknown or cheaper competition.",sc_3r:"Source inside the network",
+    sc_4s:"Repeated marketplace presence",sc_4l:"The same product recurs via sellers outside the channel.",sc_4r:"Structured, not incidental",
+    sc_5s:"Unexplained stock patterns",sc_5l:"Order volumes that demand and coverage do not explain.",sc_5r:"Buying to resell out",
+    sc_6s:"Information gaps",sc_6l:"The final seller is visible; the commercial path behind it is not.",sc_6r:"Deliberate distance",
+    sc_note:"The take-home version is a one-page rating sheet: each signal scored and weighted into a single account risk number.",
+    ol_idx:"THE ORDER-LEVEL REVIEW",ol_head:"Five checks, one decision.",
+    ol_sub:"The last filter before a significant order is confirmed. Each check has a specific question and a red flag; together they resolve to a single call.",
+    ol_1h:"Order mix vs history",ol_1p:"Does the mix match what this account normally sells, or skew to easily-resold, high-liquidity lines?",
+    ol_2h:"Terms & payment",ol_2p:"Prepayment or terms out of pattern, third-party payers, or pressure to bypass the usual process.",
+    ol_3h:"Destination & incoterms",ol_3p:"Are ship-to, incoterms and final market consistent with the account's own territory?",
+    ol_4h:"Timing",ol_4p:"Volume spikes against season, quarter-end, or immediately after a price move.",
+    ol_5h:"Margin arithmetic",ol_5p:"At this price and quantity, does the deal only make sense if the goods move out of network?",
+    ol_dec:"The review resolves to one of four calls: <b>proceed · question · escalate · decline.</b>",
+    lb_idx:"THE LEGAL BOUNDARY",lb_head:"What commercial teams can do, and the lines they cannot cross.",
+    lb_sub:"Parallel trade inside the EEA is largely lawful: once goods are placed on the EEA market with the rights holder's consent, trademark rights are exhausted and resale within the single market cannot be blocked on that basis. The room to act is on the agreement and the incentives, inside the EU Vertical Block Exemption Regulation and its 30% market-share safe harbour.",
+    lb_okh:"LAWFUL & DEFENSIBLE",
+    lb_ok1:"Qualitative selective-distribution criteria, applied consistently to every partner.",
+    lb_ok2:"Preventing authorised distributors from supplying unauthorised resellers.",
+    lb_ok3:"Monitoring prices and channels, and acting on what it shows.",
+    lb_ok4:"Realigning distributor incentives, terms and support.",
+    lb_ok5:"Tightening the relevant contractual clauses within the block exemption.",
+    lb_noh:"OFF LIMITS · HARDCORE RESTRICTIONS",
+    lb_no1:"Fixing or imposing minimum or fixed resale prices (RPM).",
+    lb_no2:"Banning exports or blocking passive sales into other member states.",
+    lb_no3:"Absolute territorial protection that shuts off cross-border supply.",
+    lb_no4:"Restricting a distributor's lawful online sales as such.",
+    lb_no5:"Blanket refusals to supply with no qualitative justification.",
+    lb_note:"FRAMEWORK: ARTICLE 101 TFEU AND COMMISSION REGULATION (EU) 2022/720 (VBER). GUIDANCE, NOT LEGAL ADVICE; MEASURES CONFIRMED WITH THE CLIENT'S COMPETITION COUNSEL.",
+    me_1h:"Diagnostic first",me_1p:"A short confidential questionnaire a week ahead; the aggregated results open the day.",
+    me_2h:"Anonymous live input",me_2p:"Honest answers from the room's own phones, not a lecture.",
+    me_3h:"Applied every module",me_3p:"Each block ends in a worked exercise on real, anonymised material.",
+    me_4h:"Tools that leave",me_4p:"The scorecard, the checklist and the legal map go home with the team.",
+    ag_idx:"HOW THE DAY RUNS",ag_head:"One day, structured, applied throughout.",
+    ag_ht:"TIME",ag_hs:"SESSION",ag_hm:"MIN",
+    ag_arrival:"Arrival, coffee",ag_open:"Opening: the pre-work reveal and the day's premise",
+    ag_m1:"Where control is lost: the four conditions",ag_break:"Break",ag_m2:"How product moves outside the network in CEE",
+    ag_m3:"Reading the account: the six-signal scorecard",ag_lunch:"Lunch",ag_m4:"The order-level review",
+    ag_m5:"The legal boundary",ag_break2:"Break",ag_clinic:"The applied case: worked end to end",
+    ag_m6:"From findings to weekly practice, and close",ag_finish:"Finish",
+    ag_note:"Half-day variant: opening, the four conditions, the scorecard and the order-level review, about four hours.",
+    ac_idx:"THE APPLIED CASE",ac_head:"One realistic case, worked end to end.",
+    ac_sub:"A composite case built from real CEE patterns: a mid-market brand's basics line surfaces on a Western European marketplace about a fifth below authorised retail, and the visible seller is a small unaffiliated trader. Teams work it backwards using the day's tools.",
+    ac_1:"Reconstruct the commercial path from the visible price back to the likely source.",
+    ac_2:"Locate where control was actually lost, against the four conditions.",
+    ac_3:"Separate what is lawful parallel trade from what is genuinely actionable.",
+    ac_4:"Recommend the first three interventions, and why chasing the visible seller is not one of them.",
+    ac_note:"Built from real CEE patterns, fully anonymised. Teams work it in groups against the day's tools, then debrief against how the situation actually resolved.",
+    tk_idx:"WHAT THE TEAM KEEPS",tk_head:"Three instruments, built for the next working day.",
+    tk_1t:"TOOL 01",tk_1h:"Account Risk Scorecard",tk_1p:"A one-page sheet turning the six signals into a repeatable risk rating for any distributor.",
+    tk_2t:"TOOL 02",tk_2h:"Order-Level Review Checklist",tk_2p:"The five checks to run before approving a significant order, ending in proceed, question, escalate or decline.",
+    tk_3t:"TOOL 03",tk_3h:"Legal Boundary Map",tk_3p:"A one-page map of what commercial teams can and cannot do, with a clear line on when to bring in counsel.",
+    tk_cert:"Each participant also receives a certificate of completion.",
+    fe_idx:"FEES",fe_head:"Priced by the tailoring, not by headcount.",
+    fe_1t:"HALF-DAY",fe_1s:"Opening, four conditions, scorecard, order-level review",fe_1g:"up to 12",fe_1a:"EUR 3,500",
+    fe_2t:"FULL DAY",fe_2s:"Full programme, all frameworks, the applied case",fe_2g:"up to 15",fe_2a:"EUR 6,000",
+    fe_3t:"FULLY TAILORED",fe_3s:"Full day built on your categories, your markets and your own anonymised cases",fe_3g:"up to 15",fe_3a:"EUR 7,500",
+    fe_add:"Remote delivery at the lower end of each tier. Travel and accommodation at cost. Optional follow-ons: 30-day reinforcement, a leadership debrief, an annual refresher.",
+    co_idx:"CONTACT",co_head:"Request a briefing on your distribution network.",
+    co_body:"In a few lines, tell us your sector, your CEE markets, and where you think product is leaking. We will come back with a tailored outline. Treated in confidence.",
+    form_name:"NAME",form_company:"COMPANY",form_email:"EMAIL",form_msg:"SECTOR, CEE MARKETS AND WHERE YOU SEE LEAKAGE",form_send:"SEND",form_note:"This opens your email client, pre-addressed to GUDAJA. Correspondence is treated as confidential.",
+    footer:"© 2026 GUDAJA · DISTRIBUTION CONTROL ADVISORY · CENTRAL & EASTERN EUROPE"
+  },
+  pl:{
+    tb_left:"GUDAJA · DORADZTWO KONTROLI DYSTRYBUCJI",tb_right:"SZKOLENIE DLA HANDLU",
+    nav_back:"KONTROLA DYSTRYBUCJI",nav_frame:"FRAMEWORKI",nav_agenda:"PRZEBIEG DNIA",nav_fees:"STAWKI",nav_contact:"ZAPYTAJ",
+    hero_kicker:"JEDNODNIOWA SESJA ROBOCZA · ZESPOŁY SPRZEDAŻY I HANDLU · CEE",
+    hero_h1:'Kontrola dystrybucji dla <span class="ac">zespołów handlowych.</span>',
+    hero_sub:"Jednodniowa sesja robocza dla funkcji handlowej marek z dystrybucją selektywną. Daje sprzedaży, key accountom i brand protection trzy rzeczy, które zostają w zespole: kartę oceny ryzyka dystrybutora, przegląd na poziomie zamówienia zakończony decyzją oraz roboczą mapę tego, na co pozwala prawo konkurencji UE. Zbudowana na trzynastu latach pracy wewnątrz europejskiej dystrybucji marek.",
+    he_f1l:"FORMAT",he_f1v:"Jeden dzień, na miejscu lub zdalnie",he_f2l:"GRUPA",he_f2v:"Do 15 osób",he_f3l:"JĘZYKI",he_f3v:"EN · PL · DE",he_f4l:"POZIOM",he_f4v:"Kadra handlowa",
+    hero_cta1:"POPROŚ O BRIEFING",hero_cta2:"ZOBACZ FRAMEWORKI",
+    pr_idx:"CZEGO DOTYCZY",pr_head:"Towar opuszcza autoryzowaną sieć przez relację handlową, nie przez logistykę.",
+    pr_body:"Gdy dystrybutor ma zbyt słabe wsparcie, jest rozliczany z wolumenu lub ma źle ustawione zachęty, część jego towaru trafia na rynki, dla których nie był przeznaczony. Zanim pojawi się to jako cena na marketplace, decyzja handlowa za tym stojąca ma już wiele miesięcy. Ta sesja działa o krok wcześniej: uczy zespoły handlowe odczytywać relację i zamówienie pod kątem tego ryzyka i reagować w granicach prawa, zanim marża zostanie utracona.",
+    pr_foot:"SZKOLENIE HANDLOWE I OPERACYJNE, NIE PORADA PRAWNA.",
+    wh_idx:"DLA KOGO",wh_head:"Napisany dla ludzi, którzy prowadzą relacje z dystrybutorami i akceptują zamówienia.",
+    wh_l1:"ROLE",wh_v1:"Dyrektorzy sprzedaży regionalni i krajowi · Key account managerowie · Operacje handlowe · Trade & channel compliance · Brand protection",
+    wh_l2:"SEKTORY",wh_v2:"Elektronika użytkowa · Kosmetyki i perfumy · Alkohole · Farmacja i OTC · Motoryzacja aftermarket · Narzędzia profesjonalne · Markowa odzież i obuwie",
+    oc_idx:"CO POTRAFIĄ PO WYJŚCIU",oc_head:"Sześć konkretnych kompetencji, do zastosowania w kolejnym tygodniu.",
+    oc1:"Nazwać cztery warunki handlowe poprzedzające nieautoryzowaną dystrybucję i ocenić, które występują w ich własnej sieci.",
+    oc2:"Ocenić ryzyko dowolnego dystrybutora na karcie sześciu sygnałów, zanim padnie zamówienie.",
+    oc3:"Przeprowadzić uporządkowany przegląd zamówienia kończący się jedną z czterech decyzji: przyjąć, dopytać, eskalować, odrzucić.",
+    oc4:"Odróżnić legalny import równoległy od działań podlegających reakcji w świetle prawa UE i omijać twarde ograniczenia prawa konkurencji.",
+    oc5:"Stosować dźwignie handlowe, które są zarazem skuteczne i możliwe do obrony.",
+    oc6:"Zastosować kartę i checklistę na własnych klientach już od kolejnego tygodnia.",
+    fc_idx:"GDZIE TRACI SIĘ KONTROLĘ",fc_head:"Cztery warunki poprzedzają niemal każdy przypadek.",
+    fc_sub:"Nieautoryzowana dystrybucja to symptom opóźniony. Staje się widoczna jako cena na marketplace; powstaje wiele miesięcy wcześniej, w jednym lub kilku z tych czterech warunków w relacji z dystrybutorem.",
+    fc_fig:"CZTERY WARUNKI",
+    fc_1h:"Zbyt słabe wsparcie",fc_1p:"Marża, warunki lub uwaga poniżej tego, czego dystrybutor potrzebuje, by dowieźć wynik wewnątrz sieci.",
+    fc_2h:"Źle ustawione zachęty",fc_2p:"Dystrybutor jest nagradzany za wolumen, którego nie umie ulokować w autoryzowanym popycie.",
+    fc_3h:"Cele ponad dyscyplinę",fc_3p:"Struktury premii i celów, przy których zamówienie poza sieć jest wyborem racjonalnym.",
+    fc_4h:"Luki w pokryciu",fc_4p:"Terytoria, SKU lub progi cenowe, których nikt nie pilnuje, i towar zaczyna dryfować.",
+    sc_idx:"OCENA KLIENTA",sc_head:"Sześć sygnałów, ocenionych przed zamówieniem.",
+    sc_sub:"Każdy sygnał jest oceniany i ważony w jeden wynik ryzyka klienta. Chodzi o powtarzalny osąd, do którego sprzedaż i brand protection dochodzą tak samo, a nie o wyczucie.",
+    sc_fig:"KARTA OCENY RYZYKA KLIENTA",sc_h1:"SYGNAŁ",sc_h2:"NA CO PATRZEĆ",sc_h3:"CO OZNACZA",
+    sc_1s:"Rozbieżność cen",sc_1l:"Ten sam SKU w istotnie różnej cenie na różnych rynkach.",sc_1r:"Przestrzeń do arbitrażu",
+    sc_2s:"Nieoczekiwana dostępność",sc_2l:"Produkt na rynku lub w kanale bez autoryzowanej drogi.",sc_2r:"Wyciek już trwa",
+    sc_3s:"Konflikt dystrybutorów",sc_3l:"Autoryzowani partnerzy zgłaszają nieznaną lub tańszą konkurencję.",sc_3r:"Źródło wewnątrz sieci",
+    sc_4s:"Powtarzalna obecność na marketplace",sc_4l:"Ten sam produkt regularnie u sprzedawców spoza kanału.",sc_4r:"Systemowe, nie przypadkowe",
+    sc_5s:"Niewyjaśnione wzorce zapasów",sc_5l:"Wolumeny zamówień, których popyt i pokrycie nie tłumaczą.",sc_5r:"Kupuje, by odsprzedać na zewnątrz",
+    sc_6s:"Luki informacyjne",sc_6l:"Końcowy sprzedawca jest widoczny; droga handlowa za nim już nie.",sc_6r:"Celowy dystans",
+    sc_note:"Wersja do zabrania to jednostronicowy arkusz: każdy sygnał oceniony i zważony w jeden wynik ryzyka klienta.",
+    ol_idx:"PRZEGLĄD NA POZIOMIE ZAMÓWIENIA",ol_head:"Pięć kontroli, jedna decyzja.",
+    ol_sub:"Ostatni filtr przed potwierdzeniem istotnego zamówienia. Każda kontrola ma konkretne pytanie i sygnał ostrzegawczy; razem prowadzą do jednej decyzji.",
+    ol_1h:"Miks zamówienia vs historia",ol_1p:"Czy miks odpowiada temu, co ten klient normalnie sprzedaje, czy przechyla się w stronę łatwo zbywalnych, płynnych linii?",
+    ol_2h:"Warunki i płatność",ol_2p:"Przedpłata lub warunki poza wzorcem, płatnicy trzeci, albo presja na ominięcie zwykłego procesu.",
+    ol_3h:"Kierunek i incoterms",ol_3p:"Czy adres dostawy, incoterms i rynek docelowy są spójne z własnym terytorium klienta?",
+    ol_4h:"Timing",ol_4p:"Skoki wolumenu wbrew sezonowi, na koniec kwartału lub tuż po ruchu cenowym.",
+    ol_5h:"Arytmetyka marży",ol_5p:"Przy tej cenie i ilości, czy transakcja ma sens tylko, jeśli towar wyjdzie poza sieć?",
+    ol_dec:"Przegląd prowadzi do jednej z czterech decyzji: <b>przyjąć · dopytać · eskalować · odrzucić.</b>",
+    lb_idx:"GRANICA PRAWNA",lb_head:"Co zespoły handlowe mogą zrobić i jakich linii nie wolno przekroczyć.",
+    lb_sub:"Import równoległy wewnątrz EOG jest w dużej mierze legalny: gdy towar zostanie wprowadzony na rynek EOG za zgodą uprawnionego, prawo do znaku wyczerpuje się, a odsprzedaży w ramach jednolitego rynku nie można na tej podstawie blokować. Pole do działania jest po stronie umowy i zachęt, w ramach unijnego rozporządzenia o wyłączeniach wertykalnych i jego progu bezpieczeństwa 30% udziału w rynku.",
+    lb_okh:"LEGALNE I DO OBRONY",
+    lb_ok1:"Jakościowe kryteria dystrybucji selektywnej, stosowane spójnie wobec każdego partnera.",
+    lb_ok2:"Uniemożliwianie autoryzowanym dystrybutorom zaopatrywania nieautoryzowanych odsprzedawców.",
+    lb_ok3:"Monitoring cen i kanałów oraz reagowanie na to, co pokazuje.",
+    lb_ok4:"Wyrównywanie zachęt, warunków i wsparcia dla dystrybutorów.",
+    lb_ok5:"Uszczelnianie właściwych klauzul umownych w granicach wyłączenia blokowego.",
+    lb_noh:"POZA GRANICĄ · TWARDE OGRANICZENIA",
+    lb_no1:"Ustalanie lub narzucanie minimalnych czy sztywnych cen odsprzedaży (RPM).",
+    lb_no2:"Zakaz eksportu lub blokowanie sprzedaży pasywnej do innych państw członkowskich.",
+    lb_no3:"Bezwzględna ochrona terytorialna odcinająca dostawy transgraniczne.",
+    lb_no4:"Ograniczanie legalnej sprzedaży online dystrybutora jako takiej.",
+    lb_no5:"Blankietowa odmowa dostaw bez uzasadnienia jakościowego.",
+    lb_note:"PODSTAWA: ART. 101 TFUE ORAZ ROZPORZĄDZENIE (UE) 2022/720 (VBER). WSKAZÓWKI, NIE PORADA PRAWNA; ŚRODKI POTWIERDZANE Z PRAWNIKIEM KONKURENCJI KLIENTA.",
+    me_1h:"Najpierw diagnoza",me_1p:"Krótki, poufny kwestionariusz tydzień wcześniej; zagregowane wyniki otwierają dzień.",
+    me_2h:"Anonimowy wkład na żywo",me_2p:"Szczere odpowiedzi z telefonów sali, a nie wykład.",
+    me_3h:"Praktyka w każdym module",me_3p:"Każdy blok kończy się ćwiczeniem na realnym, zanonimizowanym materiale.",
+    me_4h:"Narzędzia zostają",me_4p:"Karta, checklista i mapa prawna wracają do domu z zespołem.",
+    ag_idx:"PRZEBIEG DNIA",ag_head:"Jeden dzień, uporządkowany, przez cały czas praktyczny.",
+    ag_ht:"GODZ.",ag_hs:"SESJA",ag_hm:"MIN",
+    ag_arrival:"Przyjście, kawa",ag_open:"Otwarcie: ujawnienie wyników pre-worku i przesłanka dnia",
+    ag_m1:"Gdzie traci się kontrolę: cztery warunki",ag_break:"Przerwa",ag_m2:"Jak towar trafia poza sieć w CEE",
+    ag_m3:"Ocena klienta: karta sześciu sygnałów",ag_lunch:"Lunch",ag_m4:"Przegląd na poziomie zamówienia",
+    ag_m5:"Granica prawna",ag_break2:"Przerwa",ag_clinic:"Przypadek stosowany: rozwiązany od początku do końca",
+    ag_m6:"Od ustaleń do praktyki tygodniowej, i zamknięcie",ag_finish:"Koniec",
+    ag_note:"Wariant półdniowy: otwarcie, cztery warunki, karta i przegląd zamówienia, około czterech godzin.",
+    ac_idx:"PRZYPADEK STOSOWANY",ac_head:"Jeden realistyczny przypadek, rozwiązany od początku do końca.",
+    ac_sub:"Złożony przypadek zbudowany z realnych wzorców CEE: linia podstawowa marki ze średniej półki pojawia się na zachodnioeuropejskim marketplace o około jedną piątą poniżej autoryzowanej ceny, a widoczny sprzedawca to mały, niepowiązany podmiot. Zespoły rozkładają go wstecz, korzystając z narzędzi dnia.",
+    ac_1:"Odtworzyć drogę handlową od widocznej ceny do prawdopodobnego źródła.",
+    ac_2:"Wskazać, gdzie faktycznie utracono kontrolę, wobec czterech warunków.",
+    ac_3:"Oddzielić to, co jest legalnym importem równoległym, od tego, co realnie podlega reakcji.",
+    ac_4:"Zaproponować trzy pierwsze interwencje i wyjaśnić, dlaczego ściganie widocznego sprzedawcy nie jest jedną z nich.",
+    ac_note:"Zbudowany z realnych wzorców CEE, w pełni zanonimizowany. Zespoły pracują nad nim w grupach, korzystając z narzędzi dnia, a potem omawiają go wobec tego, jak sytuacja faktycznie się rozwiązała.",
+    tk_idx:"CO ZOSTAJE W ZESPOLE",tk_head:"Trzy instrumenty, gotowe na następny dzień roboczy.",
+    tk_1t:"NARZĘDZIE 01",tk_1h:"Karta oceny ryzyka klienta",tk_1p:"Jednostronicowy arkusz zamieniający sześć sygnałów w powtarzalny rating ryzyka dowolnego dystrybutora.",
+    tk_2t:"NARZĘDZIE 02",tk_2h:"Checklista przeglądu zamówienia",tk_2p:"Pięć kontroli przed akceptacją istotnego zamówienia, kończących się decyzją: przyjąć, dopytać, eskalować lub odrzucić.",
+    tk_3t:"NARZĘDZIE 03",tk_3h:"Mapa granicy prawnej",tk_3p:"Jednostronicowa mapa tego, co zespoły handlowe mogą, a czego nie, z jasną linią, kiedy włączyć prawnika.",
+    tk_cert:"Każdy uczestnik otrzymuje też certyfikat ukończenia.",
+    fe_idx:"STAWKI",fe_head:"Wycena za dopasowanie, nie za liczbę głów.",
+    fe_1t:"PÓŁ DNIA",fe_1s:"Otwarcie, cztery warunki, karta, przegląd zamówienia",fe_1g:"do 12 osób",fe_1a:"3 500 EUR",
+    fe_2t:"CAŁY DZIEŃ",fe_2s:"Pełny program, wszystkie frameworki, przypadek stosowany",fe_2g:"do 15 osób",fe_2a:"6 000 EUR",
+    fe_3t:"W PEŁNI SZYTY",fe_3s:"Cały dzień zbudowany na Twoich kategoriach, rynkach i Twoich zanonimizowanych sprawach",fe_3g:"do 15 osób",fe_3a:"7 500 EUR",
+    fe_add:"Tryb zdalny w dolnej granicy każdego progu. Dojazd i nocleg wg kosztów. Opcjonalne kontynuacje: utrwalenie 30-dniowe, debrief dla kadry, coroczne odświeżenie.",
+    co_idx:"KONTAKT",co_head:"Poproś o briefing dotyczący Twojej sieci dystrybucji.",
+    co_body:"W kilku zdaniach podaj swój sektor, rynki CEE i gdzie Twoim zdaniem towar wycieka. Odezwiemy się z dopasowanym konspektem. Traktujemy to poufnie.",
+    form_name:"IMIĘ I NAZWISKO",form_company:"FIRMA",form_email:"EMAIL",form_msg:"SEKTOR, RYNKI CEE I GDZIE WIDZISZ WYCIEK",form_send:"WYŚLIJ",form_note:"To otworzy Twój program pocztowy z gotowym adresem GUDAJA. Korespondencja traktowana jest poufnie.",
+    footer:"© 2026 GUDAJA · DORADZTWO KONTROLI DYSTRYBUCJI · EUROPA ŚRODKOWO-WSCHODNIA"
+  },
+  de:{
+    tb_left:"GUDAJA · VERTRIEBSKONTROLL-BERATUNG",tb_right:"COMMERCIAL-TRAINING",
+    nav_back:"VERTRIEBSKONTROLLE",nav_frame:"FRAMEWORKS",nav_agenda:"DER TAG",nav_fees:"HONORARE",nav_contact:"ANFRAGEN",
+    hero_kicker:"EINTÄGIGE ARBEITSSITZUNG · VERTRIEBS- UND HANDELSTEAMS · CEE",
+    hero_h1:'Vertriebskontrolle für <span class="ac">Handelsteams.</span>',
+    hero_sub:"Eine eintägige Arbeitssitzung für die kaufmännische Funktion von Marken mit selektivem Vertrieb. Sie gibt Vertrieb, Key-Account- und Brand-Protection-Teams drei Dinge, die bleiben: eine Scorecard zum Lesen des Händlerrisikos, eine Auftragsprüfung, die in einer Entscheidung endet, und eine Arbeitskarte dessen, was das EU-Wettbewerbsrecht erlaubt. Aufgebaut aus dreizehn Jahren innerhalb der europäischen Markendistribution.",
+    he_f1l:"FORMAT",he_f1v:"Ein Tag, vor Ort oder remote",he_f2l:"GRUPPE",he_f2v:"Bis zu 15",he_f3l:"SPRACHEN",he_f3v:"EN · PL · DE",he_f4l:"NIVEAU",he_f4v:"Senior Commercial",
+    hero_cta1:"BRIEFING ANFRAGEN",hero_cta2:"ZU DEN FRAMEWORKS",
+    pr_idx:"WORUM ES GEHT",pr_head:"Ware verlässt das autorisierte Netz über die Geschäftsbeziehung, nicht über die Logistik.",
+    pr_body:"Wenn ein Händler zu wenig Unterstützung erhält, auf Menge gesteuert wird oder falsch incentiviert ist, gelangt ein Teil seiner Ware auf Märkte, für die sie nie bestimmt war. Bis sie als Preis auf einem Marktplatz auftaucht, ist die kaufmännische Entscheidung dahinter Monate alt. Diese Sitzung setzt einen Schritt früher an: Sie trainiert Handelsteams, Beziehung und Auftrag auf dieses Risiko zu lesen und im Rahmen des Rechts zu handeln, bevor Marge verloren geht.",
+    pr_foot:"KAUFMÄNNISCHES UND OPERATIVES TRAINING, KEINE RECHTSBERATUNG.",
+    wh_idx:"FÜR WEN",wh_head:"Geschrieben für die Menschen, die die Händlerbeziehungen führen und die Aufträge freigeben.",
+    wh_l1:"ROLLEN",wh_v1:"Regionale & nationale Vertriebsleiter · Key Account Manager · Commercial Operations · Trade & Channel Compliance · Brand Protection",
+    wh_l2:"SEKTOREN",wh_v2:"Unterhaltungselektronik · Kosmetik & Düfte · Spirituosen · Pharma & OTC · Kfz-Aftermarket · Profi-Werkzeuge · Markenbekleidung & Schuhe",
+    oc_idx:"WAS SIE DANACH KÖNNEN",oc_head:"Sechs konkrete Fähigkeiten, ab der Folgewoche anwendbar.",
+    oc1:"Die vier kaufmännischen Bedingungen benennen, die nicht autorisierter Distribution vorausgehen, und bewerten, welche im eigenen Netz vorliegen.",
+    oc2:"Jeden Händler auf einer Sechs-Signale-Scorecard auf Risiko bewerten, bevor ein Auftrag erteilt wird.",
+    oc3:"Eine strukturierte Auftragsprüfung durchführen, die in einer von vier Entscheidungen endet: fortfahren, hinterfragen, eskalieren, ablehnen.",
+    oc4:"Rechtmäßigen Parallelhandel von handlungsrelevanter Bewegung nach EU-Recht unterscheiden und die Kernbeschränkungen des Wettbewerbsrechts meiden.",
+    oc5:"Die kaufmännischen Hebel nutzen, die zugleich wirksam und vertretbar sind.",
+    oc6:"Scorecard und Checkliste ab der Folgewoche an den eigenen Kunden anwenden.",
+    fc_idx:"WO KONTROLLE VERLOREN GEHT",fc_head:"Vier Bedingungen gehen fast jedem Fall voraus.",
+    fc_sub:"Nicht autorisierte Distribution ist ein nachlaufendes Symptom. Sie wird als Preis auf einem Marktplatz sichtbar; sie entsteht Monate früher, in einer oder mehreren dieser vier Bedingungen der Händlerbeziehung.",
+    fc_fig:"DIE VIER BEDINGUNGEN",
+    fc_1h:"Zu wenig Unterstützung",fc_1p:"Marge, Konditionen oder Aufmerksamkeit unter dem, was der Händler braucht, um seine Zahlen im Netz zu erreichen.",
+    fc_2h:"Falsch ausgerichtete Anreize",fc_2p:"Der Händler wird für Menge belohnt, die er über autorisierte Nachfrage nicht platzieren kann.",
+    fc_3h:"Ziele über Disziplin",fc_3p:"Bonus- und Quotenstrukturen, bei denen ein Auftrag aus dem Netz heraus die rationale Wahl ist.",
+    fc_4h:"Lücken in der Abdeckung",fc_4p:"Territorien, SKUs oder Preisstufen, um die sich niemand kümmert, und Ware driftet ab.",
+    sc_idx:"DEN KUNDEN LESEN",sc_head:"Sechs Signale, bewertet vor dem Auftrag.",
+    sc_sub:"Jedes Signal wird bewertet und zu einem einzigen Kundenrisiko-Score gewichtet. Es geht um ein wiederholbares Urteil, zu dem Vertrieb und Brand Protection gleich gelangen, nicht um ein Bauchgefühl.",
+    sc_fig:"KUNDENRISIKO-SCORECARD",sc_h1:"SIGNAL",sc_h2:"WORAUF ZU ACHTEN IST",sc_h3:"BEDEUTET",
+    sc_1s:"Preisdivergenz",sc_1l:"Dieselbe SKU zu deutlich unterschiedlichem Preis in verschiedenen Märkten.",sc_1r:"Arbitragespielraum",
+    sc_2s:"Unerwartete Verfügbarkeit",sc_2l:"Produkt in einem Markt oder Kanal ohne autorisierten Weg.",sc_2r:"Leckage bereits aktiv",
+    sc_3s:"Händlerkonflikt",sc_3l:"Autorisierte Partner melden unbekannte oder günstigere Konkurrenz.",sc_3r:"Quelle im Netz",
+    sc_4s:"Wiederholte Marktplatz-Präsenz",sc_4l:"Dasselbe Produkt wiederkehrend bei Verkäufern außerhalb des Kanals.",sc_4r:"Strukturiert, nicht zufällig",
+    sc_5s:"Unerklärte Bestandsmuster",sc_5l:"Auftragsmengen, die Nachfrage und Abdeckung nicht erklären.",sc_5r:"Kauft zum Weiterverkauf nach außen",
+    sc_6s:"Informationslücken",sc_6l:"Der Endverkäufer ist sichtbar; der Handelsweg dahinter nicht.",sc_6r:"Bewusster Abstand",
+    sc_note:"Die Mitnahme-Version ist ein einseitiges Bewertungsblatt: jedes Signal bewertet und zu einer einzigen Kundenrisiko-Zahl gewichtet.",
+    ol_idx:"DIE AUFTRAGSPRÜFUNG",ol_head:"Fünf Prüfungen, eine Entscheidung.",
+    ol_sub:"Der letzte Filter, bevor ein größerer Auftrag bestätigt wird. Jede Prüfung hat eine konkrete Frage und ein Warnsignal; zusammen führen sie zu einer einzigen Entscheidung.",
+    ol_1h:"Bestellmix vs. Historie",ol_1p:"Passt der Mix zu dem, was dieser Kunde normalerweise verkauft, oder neigt er zu leicht weiterverkäuflichen, liquiden Linien?",
+    ol_2h:"Konditionen & Zahlung",ol_2p:"Vorkasse oder Konditionen außerhalb des Musters, Drittzahler oder Druck, den üblichen Prozess zu umgehen.",
+    ol_3h:"Zielort & Incoterms",ol_3p:"Sind Lieferadresse, Incoterms und Zielmarkt mit dem eigenen Territorium des Kunden konsistent?",
+    ol_4h:"Timing",ol_4p:"Mengenspitzen gegen Saison, Quartalsende oder unmittelbar nach einer Preisbewegung.",
+    ol_5h:"Margenrechnung",ol_5p:"Ergibt der Deal bei diesem Preis und dieser Menge nur Sinn, wenn die Ware aus dem Netz heraus geht?",
+    ol_dec:"Die Prüfung führt zu einer von vier Entscheidungen: <b>fortfahren · hinterfragen · eskalieren · ablehnen.</b>",
+    lb_idx:"DIE RECHTLICHE GRENZE",lb_head:"Was Handelsteams tun dürfen und welche Linien sie nicht überschreiten dürfen.",
+    lb_sub:"Parallelhandel innerhalb des EWR ist weitgehend rechtmäßig: Sobald Ware mit Zustimmung des Rechteinhabers im EWR in Verkehr gebracht ist, ist das Markenrecht erschöpft und der Weiterverkauf im Binnenmarkt kann auf dieser Grundlage nicht blockiert werden. Der Handlungsspielraum liegt bei Vertrag und Anreizen, innerhalb der EU-Vertikal-Gruppenfreistellungsverordnung und ihrer 30%-Marktanteilsschwelle.",
+    lb_okh:"RECHTMÄSSIG & VERTRETBAR",
+    lb_ok1:"Qualitative Kriterien der selektiven Distribution, konsistent auf jeden Partner angewandt.",
+    lb_ok2:"Autorisierte Händler daran hindern, nicht autorisierte Wiederverkäufer zu beliefern.",
+    lb_ok3:"Preise und Kanäle überwachen und auf das Gezeigte reagieren.",
+    lb_ok4:"Händleranreize, Konditionen und Unterstützung neu ausrichten.",
+    lb_ok5:"Die relevanten Vertragsklauseln innerhalb der Gruppenfreistellung straffen.",
+    lb_noh:"TABU · KERNBESCHRÄNKUNGEN",
+    lb_no1:"Fest- oder Mindestwiederverkaufspreise setzen oder auferlegen (RPM).",
+    lb_no2:"Exporte verbieten oder Passivverkäufe in andere Mitgliedstaaten blockieren.",
+    lb_no3:"Absoluter Gebietsschutz, der grenzüberschreitende Belieferung abschneidet.",
+    lb_no4:"Den rechtmäßigen Online-Verkauf eines Händlers als solchen einschränken.",
+    lb_no5:"Pauschale Lieferverweigerung ohne qualitative Begründung.",
+    lb_note:"RAHMEN: ART. 101 AEUV UND VERORDNUNG (EU) 2022/720 (VERTIKAL-GVO). ORIENTIERUNG, KEINE RECHTSBERATUNG; MASSNAHMEN MIT DEM WETTBEWERBSANWALT DES KUNDEN BESTÄTIGT.",
+    me_1h:"Erst die Diagnose",me_1p:"Ein kurzer, vertraulicher Fragebogen eine Woche vorher; die aggregierten Ergebnisse eröffnen den Tag.",
+    me_2h:"Anonyme Beiträge in Echtzeit",me_2p:"Ehrliche Antworten von den Handys des Raums, keine Vorlesung.",
+    me_3h:"Angewandt in jedem Modul",me_3p:"Jeder Block endet in einer Übung an realem, anonymisiertem Material.",
+    me_4h:"Werkzeuge, die bleiben",me_4p:"Scorecard, Checkliste und Rechtskarte gehen mit dem Team nach Hause.",
+    ag_idx:"WIE DER TAG LÄUFT",ag_head:"Ein Tag, strukturiert, durchgehend angewandt.",
+    ag_ht:"ZEIT",ag_hs:"SITZUNG",ag_hm:"MIN",
+    ag_arrival:"Ankunft, Kaffee",ag_open:"Eröffnung: Auswertung der Vorarbeit und die Prämisse des Tages",
+    ag_m1:"Wo Kontrolle verloren geht: die vier Bedingungen",ag_break:"Pause",ag_m2:"Wie Ware in CEE außerhalb des Netzes gelangt",
+    ag_m3:"Den Kunden lesen: die Sechs-Signale-Scorecard",ag_lunch:"Mittagessen",ag_m4:"Die Auftragsprüfung",
+    ag_m5:"Die rechtliche Grenze",ag_break2:"Pause",ag_clinic:"Der angewandte Fall: von Anfang bis Ende bearbeitet",
+    ag_m6:"Von Erkenntnissen zur wöchentlichen Praxis, und Abschluss",ag_finish:"Ende",
+    ag_note:"Halbtagsvariante: Eröffnung, die vier Bedingungen, die Scorecard und die Auftragsprüfung, etwa vier Stunden.",
+    ac_idx:"DER ANGEWANDTE FALL",ac_head:"Ein realistischer Fall, von Anfang bis Ende bearbeitet.",
+    ac_sub:"Ein zusammengesetzter Fall aus realen CEE-Mustern: Die Basisline einer Mid-Market-Marke taucht auf einem westeuropäischen Marktplatz rund ein Fünftel unter dem autorisierten Preis auf, und der sichtbare Verkäufer ist ein kleiner, unabhängiger Händler. Die Teams arbeiten ihn rückwärts mit den Werkzeugen des Tages.",
+    ac_1:"Den Handelsweg vom sichtbaren Preis zurück zur wahrscheinlichen Quelle rekonstruieren.",
+    ac_2:"Die Stelle finden, an der die Kontrolle tatsächlich verloren ging, gegen die vier Bedingungen.",
+    ac_3:"Trennen, was rechtmäßiger Parallelhandel ist, von dem, was wirklich handlungsrelevant ist.",
+    ac_4:"Die ersten drei Interventionen empfehlen, und warum das Verfolgen des sichtbaren Verkäufers keine davon ist.",
+    ac_note:"Aus realen CEE-Mustern gebaut, vollständig anonymisiert. Die Teams bearbeiten ihn in Gruppen mit den Werkzeugen des Tages und werten dann gegen den tatsächlichen Ausgang aus.",
+    tk_idx:"WAS DEM TEAM BLEIBT",tk_head:"Drei Instrumente, für den nächsten Arbeitstag gebaut.",
+    tk_1t:"WERKZEUG 01",tk_1h:"Kundenrisiko-Scorecard",tk_1p:"Ein einseitiges Blatt, das die sechs Signale in ein wiederholbares Risiko-Rating für jeden Händler verwandelt.",
+    tk_2t:"WERKZEUG 02",tk_2h:"Auftragsprüfungs-Checkliste",tk_2p:"Die fünf Prüfungen vor der Freigabe eines größeren Auftrags, endend mit fortfahren, hinterfragen, eskalieren oder ablehnen.",
+    tk_3t:"WERKZEUG 03",tk_3h:"Rechtsgrenzen-Karte",tk_3p:"Eine einseitige Karte dessen, was Handelsteams dürfen und was nicht, mit einer klaren Linie, wann Rechtsrat einzuholen ist.",
+    tk_cert:"Jeder Teilnehmer erhält zudem ein Abschlusszertifikat.",
+    fe_idx:"HONORARE",fe_head:"Bepreist nach der Anpassung, nicht nach Kopfzahl.",
+    fe_1t:"HALBER TAG",fe_1s:"Eröffnung, vier Bedingungen, Scorecard, Auftragsprüfung",fe_1g:"bis 12 Personen",fe_1a:"3.500 EUR",
+    fe_2t:"GANZER TAG",fe_2s:"Volles Programm, alle Frameworks, der angewandte Fall",fe_2g:"bis 15 Personen",fe_2a:"6.000 EUR",
+    fe_3t:"VOLL MASSGESCHNEIDERT",fe_3s:"Ganzer Tag auf Ihren Kategorien, Ihren Märkten und Ihren anonymisierten Fällen aufgebaut",fe_3g:"bis 15 Personen",fe_3a:"7.500 EUR",
+    fe_add:"Remote-Durchführung am unteren Ende jeder Stufe. Anreise und Übernachtung zu Selbstkosten. Optionale Anschlüsse: 30-Tage-Verstärkung, ein Leadership-Debrief, eine jährliche Auffrischung.",
+    co_idx:"KONTAKT",co_head:"Fragen Sie ein Briefing zu Ihrem Vertriebsnetz an.",
+    co_body:"Schildern Sie in wenigen Zeilen Ihren Sektor, Ihre CEE-Märkte und wo Ihrer Ansicht nach Ware abfließt. Wir melden uns mit einem zugeschnittenen Konzept. Vertraulich behandelt.",
+    form_name:"NAME",form_company:"UNTERNEHMEN",form_email:"E-MAIL",form_msg:"SEKTOR, CEE-MÄRKTE UND WO SIE LECKAGE SEHEN",form_send:"SENDEN",form_note:"Dies öffnet Ihr E-Mail-Programm, voradressiert an GUDAJA. Korrespondenz wird vertraulich behandelt.",
+    footer:"© 2026 GUDAJA · VERTRIEBSKONTROLL-BERATUNG · MITTEL- & OSTEUROPA"
+  }
+};
+function setLang(lang){
+  const d=T[lang];document.documentElement.lang=lang;
+  document.getElementById('hero_h1').innerHTML=d.hero_h1;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(HTMLKEYS.indexOf(k)>=0)return;if(d[k]===undefined)return;if(k==='ol_dec')el.innerHTML=d[k];else el.textContent=d[k];});
+  document.querySelectorAll('.langtog button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+}
+document.querySelectorAll('.langtog button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+setLang('en');
+</script>
+</body>
+</html>

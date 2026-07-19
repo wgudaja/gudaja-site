@@ -6,14 +6,6 @@
     { "source": "/training", "destination": "/training.html" },
     { "source": "/schulung", "destination": "/training.html" }
   ],
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.gudaja.pl" }],
-      "destination": "https://gudaja.pl/:path*",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
